@@ -18,29 +18,35 @@ This is the opposite:
 - **Multi-level context** — sometimes you work from inside a client folder (zoomed in), sometimes from the top level (everything available). Both are first-class.
 - **Infinitely extensible** — when the next thing you want to do isn't here, you (or your AI) just adds it. Excalidraw alongside AI is one example; tomorrow it's a custom MCP, a script, a new skill. The extension path is the value, not a footnote.
 
-## The seven principles
+## The eight principles
 
-1. **Local files beat connected systems** for AI work. Fast, native, no connection layer required. The default lean is *bring it into the workspace as files* over *connect via API*. APIs are for things that must stay live (calendar, CRM as system of record); files are for everything else.
+1. **Local files beat connected systems** for AI work. Fast, native, no connection layer required. The default lean is *bring it into the workspace as files* over *connect via API* — for the things where local makes sense.
 
-2. **The AI is your interface across systems.** The seed exists so the AI can synthesize from many sources at once without each one needing its own ceremony. Cross-system synthesis is the headline value.
+2. **Delegate to systems-of-record; build only the interface enhancements that make AI work usefully better.** Drive owns versioning of your docs — we don't duplicate that; we symlink in the references and let Drive do its job. HubSpot owns CRM state — we don't rebuild it; we add the cross-source synthesis the native UI doesn't give us. Calendar owns event truth. The point isn't to replace the system you (or your team) already use; it's to *augment what you can do with it from an AI session.*
 
-3. **Curate + connect, don't just store.** Each artifact knows its neighbors. Strategy connects to engagements connects to transcripts connects to swipe file. AI sessions traverse those connections naturally because the files are right there in a coherent structure.
+   The transcript-vault is the canonical example. It doesn't replace your recorder; it adds abilities the recorder's UI fundamentally can't: lookup-entire-relationship across years of calls, semantic search across the corpus, deep-research prompts that orchestrate multi-step retrieval. Those interface enhancements emerged from working with the AI and noticing what was painful or impossible with the native tool. **That's the right way to discover what to build:** keep using the native system, notice what the AI can't do well over it, build only the interface layer that closes that specific gap.
 
-4. **Knowledge has layers.** Stable (`Context/`) / current (`Strategy/`) / operational (`Container/`). Keeping them separate prevents conversational thinking from leaking into canonical and prevents stale canonical from disguising itself as current strategy.
+3. **The AI is your interface across systems.** The seed exists so the AI can synthesize from many sources at once without each one needing its own ceremony. Cross-system synthesis is the headline value.
 
-5. **Falsifiable beats confident.** Every strategic claim has an evidence row. The Evidence Ledger is the answer to *"how do you know this is still true?"* Without that mechanism, strategy drifts toward what feels right and decouples from operating reality.
+4. **Curate + connect, don't just store.** Each artifact knows its neighbors. Strategy connects to engagements connects to transcripts connects to swipe file. AI sessions traverse those connections naturally because the files are right there in a coherent structure.
 
-6. **Capture-then-integrate, with approval gates.** New learnings stage in `Strategy/to integrate/` until corroborated. Folding them into canonical requires explicit per-edit approval. No silent writes. This is the antidote to continuous-edit drift.
+5. **Knowledge has layers.** Stable (`Context/`) / current (`Strategy/`) / operational (`Container/`). Keeping them separate prevents conversational thinking from leaking into canonical and prevents stale canonical from disguising itself as current strategy.
 
-7. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
+6. **Falsifiable beats confident.** Every strategic claim has an evidence row. The Evidence Ledger is the answer to *"how do you know this is still true?"* Without that mechanism, strategy drifts toward what feels right and decouples from operating reality.
+
+7. **Capture-then-integrate, with approval gates.** New learnings stage in `Strategy/to integrate/` until corroborated. Folding them into canonical requires explicit per-edit approval. No silent writes. This is the antidote to continuous-edit drift.
+
+8. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
 
 ## The central decision protocol: gain-analysis
 
-Most "should I build this?" questions can be answered with one lens:
+Principle 2 (delegate to systems-of-record) is the *stance*. Gain-analysis is how you make it operational. Most "should I build this?" questions can be answered with one lens:
 
 > **What's the marginal ability or speed gained over what my live system already does — and is that gain worth the build + maintenance cost?**
 
-Default lean: **skip**. The burden of proof is on **build**. This applies recursively — even to substrate the seed itself ships (the transcript vault). Don't recreate what HubSpot, ClickUp, Drive, or your recorder already do well.
+Default lean: **skip** — keep using the native system, let it do its job. The burden of proof is on **build**, and what gets built should almost always be an *interface enhancement* (something that makes AI work over the native system meaningfully better) rather than a replacement of the native system itself.
+
+This applies recursively — even to the substrate the seed itself ships (the transcript vault). Run gain-analysis on that before installing it.
 
 The [`gain-analysis`](.claude/skills/gain-analysis/SKILL.md) skill is the explicit version of this protocol.
 
@@ -64,4 +70,4 @@ The methodology is more important than any specific implementation. The seed is 
 
 What survives across implementations is the philosophy:
 
-> *Local files beat connected systems. The AI is your cross-system interface. Curate and connect, don't just store. Falsifiable beats confident. Cadence beats discipline. Ask "what's the gain?" before building anything new. Extend without bound.*
+> *Local files beat connected systems where they can. Delegate to systems-of-record where they can't — and add only the interface enhancements that make AI work usefully better over them. The AI is your cross-system interface. Curate and connect, don't just store. Falsifiable beats confident. Cadence beats discipline. Ask "what's the gain?" before building anything new. Extend without bound.*

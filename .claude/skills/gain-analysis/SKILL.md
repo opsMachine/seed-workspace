@@ -12,6 +12,15 @@ The central decision protocol of the seed. For every "should I build this locall
 
 If the answer is "nothing meaningful", skip. This is the philosophical guardrail against re-creating things HubSpot / ClickUp / Drive / your recorder already do well.
 
+The positive framing matters: the goal isn't to *replace* the native system, it's to **add the interface enhancements that make AI work over it usefully better.** Keep using the native system; identify the gaps the AI can't bridge with the native interface; build only those.
+
+**Canonical example.** The seed's transcript-vault doesn't replace your meeting recorder. It adds three things the recorder's UI fundamentally can't:
+1. *Lookup-entire-relationship* — pull every meeting, every quote, every action item across years of history with one person/company in a single query
+2. *Semantic search across the corpus* — find every time you discussed X, ranked by relevance, even when the words varied
+3. *Deep-research prompts* — multi-step retrieval orchestrated by the MCP (`client_persona`, `account_prep`, `sales_coaching`, `content_from_meetings`)
+
+Those interface enhancements emerged from working with the AI and noticing what was painful or impossible with the native UI. **That discovery process is the right way to find what to build.** Don't speculate about what might be useful; use the native tool, notice the friction, build the interface layer that closes that specific gap.
+
 ---
 
 ## When to use
@@ -73,9 +82,11 @@ Be honest. Local indexes have a non-trivial maintenance tail.
 
 Three possible outcomes:
 
-- **Build** — gain is real and recurring; cost is justifiable. Recommend the smallest possible v1.
+- **Build** — gain is real and recurring; cost is justifiable. Recommend the smallest possible v1, framed as an *interface enhancement* to the native system, not a replacement.
 - **Skip** — gain is hypothetical or one-off; live system is good enough. Recommend live-only.
-- **Hybrid / lightweight** — live system for system-of-record, lightweight cache or index for one specific repeated query.
+- **Hybrid / lightweight** — live system stays the system-of-record, lightweight cache or index handles one specific repeated query the native system can't.
+
+If the recommendation is "build," **explicitly name what stays delegated to the native system** (versioning, write-truth, primary search, etc.) so the build stays additive and doesn't accidentally try to replace the source.
 
 Don't decide. **Surface the trade-off in plain English and ask the user.** They are in charge philosophically (see [`PHILOSOPHY.md`](../../PHILOSOPHY.md)).
 

@@ -7,8 +7,17 @@ Surface Drive content in the workspace as if it were local files. The seed's pre
 - **Local files are AI-native.** Faster than API calls, no rate limits, work with grep / ripgrep / file readers without extra ceremony.
 - **Real-time sync.** File Stream / rclone keeps the local view current automatically.
 - **Drive's UI still works.** You're not migrating; you're surfacing.
+- **Drive owns versioning.** We don't duplicate that. The seed versions only the *symlinks* (the references); the file content's history lives in Drive where it belongs. This is the canonical example of seed Principle 2: delegate to systems-of-record, add only the interface enhancement (the symlink) that lets AI sessions read them as local files.
 
 The Drive MCP makes sense when you need *write* access from an AI session, or when File Stream isn't available. Otherwise: symlinks.
+
+## One important setup note
+
+**Make sure File Stream (or rclone) always mounts to the same absolute path.** Symlinks resolve absolutely; if Drive mounts to a different path next reboot (different account, different OS user, different rclone target), every symlink in the workspace breaks.
+
+- macOS Google Drive for desktop: stable per-account at `~/Library/CloudStorage/GoogleDrive-<email>/My Drive`. Don't switch accounts mid-stream.
+- Windows: assign and lock a drive letter (`G:\` is the default).
+- Linux rclone: pick a stable mount point (`~/gdrive/` works well) and use a systemd user unit so it auto-mounts there every time.
 
 ## The pattern
 
