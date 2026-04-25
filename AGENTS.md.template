@@ -6,6 +6,14 @@ Workspace-level rules for any AI agent working in this repo. This file is auto-l
 
 ---
 
+## What this workspace is
+
+A bespoke AI cowork space that **augments live systems-of-record** (Drive, CRM, calendar, your recorder) rather than replacing them. The full philosophy is in [`PHILOSOPHY.md`](PHILOSOPHY.md); the operating implication for you, the AI, is:
+
+- **Prefer reading from local files** that live in this workspace over re-querying APIs the user already has set up.
+- **Don't suggest building parallel local copies** of things the live system handles well (versioning of Drive docs, CRM state, calendar truth) — surface them via symlink / MCP and let the source own its job.
+- **The interface enhancements that ARE local here** (transcript-vault, the strategy layer, the Evidence Ledger) exist because they let cross-system synthesis happen — use them as your composition layer.
+
 ## Read first
 
 If you're a fresh AI session in this workspace:

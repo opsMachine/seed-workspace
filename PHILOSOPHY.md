@@ -18,7 +18,7 @@ This is the opposite:
 - **Multi-level context** — sometimes you work from inside a client folder (zoomed in), sometimes from the top level (everything available). Both are first-class.
 - **Infinitely extensible** — when the next thing you want to do isn't here, you (or your AI) just adds it. Excalidraw alongside AI is one example; tomorrow it's a custom MCP, a script, a new skill. The extension path is the value, not a footnote.
 
-## The eight principles
+## The six principles
 
 1. **Local files beat connected systems** for AI work. Fast, native, no connection layer required. The default lean is *bring it into the workspace as files* over *connect via API* — for the things where local makes sense.
 
@@ -28,15 +28,11 @@ This is the opposite:
 
 3. **The AI is your interface across systems.** The seed exists so the AI can synthesize from many sources at once without each one needing its own ceremony. Cross-system synthesis is the headline value.
 
-4. **Curate + connect, don't just store.** Each artifact knows its neighbors. Strategy connects to engagements connects to transcripts connects to swipe file. AI sessions traverse those connections naturally because the files are right there in a coherent structure.
+4. **Architecture: layers separated, artifacts connected.** Stable (`Context/`) / current (`Strategy/`) / operational (`Container/`) are three distinct layers — keeping them separate prevents conversational thinking from leaking into canonical, and prevents stale canonical from disguising itself as current strategy. *Within and across* layers, every artifact knows its neighbors (strategy connects to engagements connects to transcripts connects to swipe file). AI sessions traverse those connections naturally because the files are right there in a coherent structure.
 
-5. **Knowledge has layers.** Stable (`Context/`) / current (`Strategy/`) / operational (`Container/`). Keeping them separate prevents conversational thinking from leaking into canonical and prevents stale canonical from disguising itself as current strategy.
+5. **Falsifiable beats confident.** Every strategic claim has an evidence row. The Evidence Ledger is the answer to *"how do you know this is still true?"* Without that mechanism, strategy drifts toward what feels right and decouples from operating reality. The capture-then-integrate lifecycle ([`Strategy/to integrate/`](Strategy/to%20integrate/) → approval-gated `integrate` skill → canonical) exists in service of this — see [`WORKFLOWS.md`](WORKFLOWS.md) for the mechanism.
 
-6. **Falsifiable beats confident.** Every strategic claim has an evidence row. The Evidence Ledger is the answer to *"how do you know this is still true?"* Without that mechanism, strategy drifts toward what feels right and decouples from operating reality.
-
-7. **Capture-then-integrate, with approval gates.** New learnings stage in `Strategy/to integrate/` until corroborated. Folding them into canonical requires explicit per-edit approval. No silent writes. This is the antidote to continuous-edit drift.
-
-8. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
+6. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
 
 ## The central decision protocol: gain-analysis
 

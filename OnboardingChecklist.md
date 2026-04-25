@@ -4,6 +4,8 @@ A **one-screen** non-blocking guide. The seed assumes you're technical and have 
 
 The methodology is in [`PHILOSOPHY.md`](PHILOSOPHY.md). The four loops are in [`WORKFLOWS.md`](WORKFLOWS.md). This is just the order things tend to land in.
 
+> **Companion doc:** [`Setup-Decisions.md`](Setup-Decisions.md) is the *what-and-why* matrix (per-ability decisions: build / connect / skip + reasoning). This checklist is the *did-it-yet* tracker. The two work together — discover-stack writes the matrix; you tick this checklist as you act on it.
+
 ---
 
 ## The shape

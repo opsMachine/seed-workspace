@@ -40,7 +40,7 @@ server.registerTool(
   {
     title: "List Meetings",
     description:
-      "List meetings from the local Fathom knowledge base with optional filters. Returns the most recent first. Filters compose as AND across params; within the relationships or call_types arrays the semantics are OR.",
+      "List meetings from the local transcript knowledge base with optional filters. Returns the most recent first. Filters compose as AND across params; within the relationships or call_types arrays the semantics are OR.",
     inputSchema: {
       person: z
         .string()
@@ -806,14 +806,14 @@ server.registerTool(
   {
     title: "Get Transcript",
     description:
-      "Retrieve all indexed transcript chunks for a meeting, ordered by timestamp. Optional `speaker` substring filter. Note: many chunks show `speakers: \"Unknown\"` because Fathom did not attribute them — filtering by a specific name may return few or no rows until upstream speaker attribution is improved (see skill A2).",
+      "Retrieve all indexed transcript chunks for a meeting, ordered by timestamp. Optional `speaker` substring filter. Note: depending on the recorder adapter, many chunks may show `speakers: \"Unknown\"` when the recorder didn't attribute them — filtering by a specific name may return few or no rows for those chunks.",
     inputSchema: {
       recording_id: z.number().int(),
       speaker: z
         .string()
         .optional()
         .describe(
-          "Case-insensitive substring match against the chunk's speaker field. Will match zero chunks for chunks where Fathom recorded the speaker as `Unknown`."
+          "Case-insensitive substring match against the chunk's speaker field. Chunks with `Unknown` speaker (recorder didn't attribute) won't match."
         ),
       include_summary: z
         .boolean()
@@ -854,13 +854,13 @@ server.registerTool(
 );
 
 const UNKNOWN_SPEAKER_NOTE = `
-Note on speaker attribution: many transcript chunks show \`Unknown\` as the
-speaker because Fathom did not attribute them. When quoting, always list the
-full participants array so the reader can reason about who likely said what,
-and avoid confident claims of the form "X said Y" unless the speaker is
-explicitly named in the chunk. Prefer meeting summaries (which Fathom
-attributes more reliably) over raw transcript for attribution-sensitive
-statements.`.trim();
+Note on speaker attribution: depending on the recorder adapter in use, many
+transcript chunks may show \`Unknown\` as the speaker when the recorder
+didn't attribute them. When quoting, always list the full participants
+array so the reader can reason about who likely said what, and avoid
+confident claims of the form "X said Y" unless the speaker is explicitly
+named in the chunk. Prefer meeting summaries (typically attributed more
+reliably than raw transcript) for attribution-sensitive statements.`.trim();
 
 server.registerPrompt(
   "client_persona",

@@ -168,38 +168,23 @@ The healthiest operating state is when **all four loops are running quietly in p
 
 ---
 
-## Healthy vs. unhealthy operating signals
+## Health check (and what to do when a loop breaks)
 
-**Healthy:**
-- Friday retro happens every week without prompting
-- `Strategy/to integrate/` has 1–4 items at any time (not 0, not 20)
-- `Strategy/evidence-ledger.md` has been touched in the last 2 weeks
-- Claims have moved levels (up or down) in the last quarter
-- A retired claim exists — proves the system isn't just confirming itself
+The Friday review is the natural slot to scan these signals.
 
-**Unhealthy:**
-- Friday retro skipped twice in a row
-- Staging is empty for >1 month (you're either not learning or not capturing)
-- Staging has >10 items (integration cadence isn't running)
-- Every claim is L4 (you're confirming, not testing)
-- No retired claims after 6 months (you're not letting yourself be wrong)
-- Canonical docs untouched for 3+ months (probably stale, not perfect)
+| Loop | Healthy | Unhealthy | Fix when broken |
+|---|---|---|---|
+| 1. Capture | Staging has 1–4 items | Empty for >1 month, OR >10 items | Empty: when something feels significant in a conversation, stop and stage it. Overflowing: schedule a monthly integrate pass. |
+| 2. Integrate | Canonical touched in the last quarter | Canonical untouched for 3+ months | Run `integrate` on the oldest staged doc. Don't batch — one source per session. |
+| 3. Operating | Friday retro happens without prompting | Skipped twice in a row | Re-install the keystone; cut duration to 15 min if 30 is too much. Cadence > content. |
+| 4. Truth | At least one claim level changed (up or down) in the last quarter; at least one retired claim exists | Every claim L4, no retired claims after 6 months | Trigger forensics on engagement-close, not on schedule. Every won or lost engagement = mandatory 30-min forensic. |
 
-The Friday review is the natural slot to check these signals. If you go more than ~3 weeks without one, run [`gain-analysis`](.claude/skills/gain-analysis/SKILL.md) on whatever's been displacing it — chances are it's a build that wasn't actually worth it.
-
----
-
-## When loops break — what to do
-
-- **Capture loop dry?** Either nothing meaningful is happening (rare) or you're not noticing. The fix: when something feels significant in a conversation, stop and stage it before you forget. 5 minutes now beats reconstructing later.
-- **Integrate loop never runs?** The staging area accumulates and integration becomes daunting. Schedule a 30-min monthly integrate pass; do one source per pass.
-- **Operating loop collapses?** Almost always the keystone cadence skipping. Re-install it; reduce to 15 minutes if 30 is too much. Cadence > content; a short ritual that happens beats a comprehensive one that doesn't.
-- **Truth loop neglected?** Set the trigger to engagement-close (not "every quarter"). Every won or lost engagement = mandatory 30-min forensic. The ledger fills in passively.
+If you go more than ~3 weeks without a Friday review, run [`gain-analysis`](.claude/skills/gain-analysis/SKILL.md) on whatever's been displacing it — chances are it's a build that wasn't actually worth it.
 
 ---
 
 ## Closing
 
-Workflows aren't policies — they're patterns the system tends to fall into when you operate it well. The seed gives you the artifacts, the skills, and the cadence scaffolding. The loops are what you actually live in.
+Workflows aren't policies — they're patterns the system tends to fall into when operated well. The seed gives you the artifacts, the skills, and the cadence scaffolding. The loops are what you actually live in.
 
 The most reliable indicator the system is working: **all four loops are running, none are dramatic, and you can name the most recent revolution of each one.**

@@ -6,6 +6,8 @@ The output of the [`discover-stack`](.claude/skills/discover-stack/SKILL.md) ski
 
 > Don't fill this in by hand on day 1. Run `discover-stack` instead — the skill will populate the matrix from a short conversation. You can edit it manually thereafter.
 
+> **Companion doc:** [`OnboardingChecklist.md`](OnboardingChecklist.md) is the *did-it-yet* tracker; this doc is the *what-and-why* matrix. Update both: when a decision changes here, the checklist usually has an item that needs re-ticking.
+
 ---
 
 ## Decision matrix

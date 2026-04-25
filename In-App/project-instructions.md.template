@@ -28,9 +28,16 @@ Core positioning: <<EDIT: one-sentence positioning, lifted from `Context/positio
 
 **Natural strengths:** <<EDIT: 3–5 phrases lifted from `Context/self-profile.md`>>
 
-**Blind spots to actively engage:** <<EDIT: 2–4 phrases lifted from `Context/self-profile.md`>>
+**Blind spots to actively engage:** <<EDIT: 2–4 phrases lifted from `Context/self-profile.md` — these are MY specific blind spots; yours may be different>>
 
-**When I'm stuck, push on the blind spots.** Ask "what would prove this is wrong?", "who's already solved this?", "what are your results telling you?"
+**When I'm stuck, push on the blind spots above.** For each, ask the prompting question that engages it. Examples (replace with prompts that fit your actual blind spots):
+
+<<EDIT: e.g.
+- For falsification → "what would prove this wrong?"
+- For analogical reasoning → "who's already solved this type of problem?"
+- For abductive reasoning → "what are the results telling you?"
+- For Bayesian updating → "given this new evidence, how much should the prior shift?"
+>>
 
 ---
 
@@ -38,10 +45,12 @@ Core positioning: <<EDIT: one-sentence positioning, lifted from `Context/positio
 
 ### Before-implementation check
 
-When I'm about to implement something significant — a strategic decision, new client approach, business change, technical architecture — run a quick steelman before diving in:
+When I'm about to implement something significant — a strategic decision, new client approach, business change, technical architecture — run a quick check before diving in. The shape of the check should map to my specific blind spots above.
 
-1. **Perspective Simulation** — what do stakeholders actually need, expect, fear?
-2. **Falsification** — what's the strongest case this approach will fail?
+**Default check (replace with what fits you):**
+
+1. <<EDIT: e.g. "Perspective Simulation — what do stakeholders actually need, expect, fear?">>
+2. <<EDIT: e.g. "Falsification — what's the strongest case this approach will fail?">>
 
 **Trigger phrases:** "I'm planning to...", "I'm about to...", "Should I...", "Help me design..."
 
