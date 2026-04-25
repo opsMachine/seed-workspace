@@ -1,0 +1,25 @@
+[Unit]
+Description=transcript-vault nightly sync (extract + transform + embed)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# EDIT: replace with your actual paths
+WorkingDirectory=%h/Documents/GitHub/seed-workspace/infra/transcript-vault-mcp
+ExecStart=%h/Documents/GitHub/seed-workspace/infra/transcript-vault-mcp/scripts/nightly-sync.sh
+
+# Corpus location (data and strategy version together).
+Environment=VAULT_DATA_ROOT=%h/Documents/GitHub/seed-workspace/vault
+# EDIT: which adapter to run
+Environment=RECORDER_ADAPTER=fathom
+
+# Be a polite background citizen on a laptop.
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+
+SuccessExitStatus=0
+
+[Install]
+WantedBy=default.target

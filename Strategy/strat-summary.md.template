@@ -1,0 +1,120 @@
+# Strategy Summary — Working Document
+
+*Created: YYYY-MM-DD*
+*Last updated: YYYY-MM-DD (note what changed)*
+*Purpose: current working strategy + container backlog. Living doc — update when understanding shifts; retire claims when decisively superseded.*
+
+> Copy to `strat-summary.md` (drop the `.template` suffix) and edit. Treat this as a working document, not a polished deliverable. Velocity > polish.
+
+---
+
+## How to read this document
+
+- Current working synthesis after <<EDIT: N rounds over M months>> of strategic exploration
+- TL;DR section first; supporting detail below
+- Strikethrough indicates a claim has been refined or superseded; the new version follows on the same line
+- "Held" or "deferred" in open questions: explicitly not-yet-resolved (different from "open")
+- Every major claim should have a corresponding row in [`evidence-ledger.md`](evidence-ledger.md)
+
+---
+
+## Headline diagnosis
+
+**<<EDIT: one-sentence headline diagnosis of where you are right now.>>**
+
+Triangulation:
+
+- <<EDIT: source 1 — e.g. "Self-knowledge says <X>">>
+- <<EDIT: source 2 — e.g. "Recent engagement pattern says <Y>">>
+- <<EDIT: source 3 — e.g. "Conversion data says <Z>">>
+
+**Implication:** <<EDIT: what this triangulation means for the next operating cycle>>
+
+---
+
+## TL;DR — current synthesis
+
+Quick-reference. Each bullet = headline; full reasoning lives in detail sections below.
+
+### Meta (about how we work)
+
+<<EDIT: bullets about how the strategic work itself unfolds — what you've learned about your own reasoning patterns this round>>
+
+### Strat (strategic content)
+
+<<EDIT: bullets about the actual strategy — positioning, audience, channel, pricing, partner model>>
+
+### Container (operational discipline)
+
+<<EDIT: bullets about how the strategy gets installed and stays installed>>
+
+---
+
+## Detail sections
+
+Build out one section per major claim from the TL;DR. Suggested template per section:
+
+```
+## <claim name>
+
+**Current state:** <one sentence>
+
+**Why we hold it:** <reasoning, with citations to evidence-ledger.md>
+
+**What would change it:** <falsification criteria>
+
+**Status:** active | refining | parked | retired
+```
+
+<<EDIT: add as many detail sections as you have meaningful claims. Don't pad.>>
+
+---
+
+## Container backlog
+
+Operational artifacts you know need to exist but haven't built yet. Build **one at a time**, never more. The cadence is a marathon.
+
+<<EDIT: e.g.
+
+- **<keystone cadence>** — IN PROGRESS / INSTALLED / NOT YET
+- **MVP conversion measurement protocol** — NOT YET
+- **Iteration discipline frame** ("when do we iterate vs. abandon") — NOT YET
+- **Audience-portfolio narrowing triggers** — NOT YET
+- **Per-partnership decision-point rhythm** — NOT YET
+>>
+
+These are not all this cycle. The discipline is: one container item built at a time, then maintained.
+
+---
+
+## Open questions (held or deferred)
+
+Decisions you're explicitly not making yet, with the trigger that would re-open them.
+
+<<EDIT: e.g.
+
+- **<question>** — held; re-open when <trigger event>
+- **<question>** — deferred to <date or condition>
+>>
+
+---
+
+## Operating discipline for the next 30 days
+
+What you're committing to do (and just as importantly, *not* do) in the next month.
+
+<<EDIT: e.g.
+
+- Install <one container item>
+- Run the keystone cadence every <day> without skipping
+- Resist the impulse to write another framework — convert to action instead
+- Friday review is sacred; calendar-blocked
+>>
+
+---
+
+## Update log
+
+| Date | Change |
+|---|---|
+| YYYY-MM-DD | Initial draft |

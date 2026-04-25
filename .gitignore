@@ -1,0 +1,65 @@
+# Live files derived from .template files (templates are tracked; live is personal)
+# These are listed defensively; the bootstrap script does NOT auto-create most of these.
+AGENTS.md
+voice-profile.md
+PROJECTS.md
+.cursor/mcp.json
+Context/self-profile.md
+Context/working-with-*.md
+!Context/working-with-X.md.template
+Context/positioning-canvas.md
+Context/swipe-file.md
+Strategy/strat-summary.md
+Strategy/evidence-ledger.md
+Strategy/*.excalidraw
+In-App/project-instructions.md
+.claude/skills/.skill-config.yml
+
+# Setup-Decisions.md and OnboardingChecklist.md are TRACKED — they ship as
+# starter content and the user edits them in place. Decision: keep in git so
+# updates to the seed don't blow away their adoption history.
+
+# Per-week container files are tracked (the user's operating record is part
+# of the workspace's value). If you want them private, .gitignore Container/week-of-*.md
+# and only track the TEMPLATE.
+
+# Strategy staging — tracked (the lifecycle requires git visibility)
+
+# Symlinks under clients/, personal/, infra/drive-symlinks/ are personal
+clients/*
+!clients/README.md
+personal/*
+!personal/README.md
+infra/drive-symlinks/*
+!infra/drive-symlinks/README.md
+
+# Vault runtime artifacts (mirror infra/transcript-vault-mcp/.gitignore at the root level)
+vault/Meetings/
+vault/data/
+data/raw/
+data/vectors/
+data/sync-state.json
+data/proposals.yml
+data/candidates/
+data/logs/
+data/.sync.lock
+*.db
+*.db-shm
+*.db-wal
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Node (only relevant under infra/transcript-vault-mcp/, but defensive at root)
+node_modules/
+dist/
+
+# OS / editor crud
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/

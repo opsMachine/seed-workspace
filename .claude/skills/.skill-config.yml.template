@@ -1,0 +1,48 @@
+# .skill-config.yml — canonical-doc path mapping for the seed's skills.
+#
+# Skills like `harvest-learnings` and `integrate` reference logical doc
+# names ("positioning-canonical", "evidence-ledger") so they work even
+# if you've renamed or restructured your canonical docs.
+#
+# Copy to .skill-config.yml (drop the .template suffix) and edit. The
+# `discover-stack` skill will populate this for you on first run if you
+# run it before manually editing.
+#
+# All paths are RELATIVE to the workspace root.
+
+canonical:
+  positioning_canonical: Context/positioning-canvas.md
+  swipe_file: Context/swipe-file.md
+  self_profile: Context/self-profile.md
+  working_with: Context/working-with-X.md          # rename X to your name
+  voice_profile: voice-profile.md
+  strat_summary: Strategy/strat-summary.md
+  evidence_ledger: Strategy/evidence-ledger.md
+  in_app_instructions: In-App/project-instructions.md
+  # Optional — uncomment + edit if you keep a visual strategy map:
+  # strategy_visual: Strategy/your-map.excalidraw
+
+staging:
+  to_integrate_dir: Strategy/to integrate
+  archived_dir: Strategy/z-archived
+
+container:
+  weekly_plan_dir: Container
+  cadences_dir: Container/cadences
+
+clients:
+  root: clients
+
+# Set to true to mark a doc as "not in use" — the skills will skip it
+# rather than warn that it's missing.
+not_in_use:
+  swipe_file: false
+  voice_profile: false
+  strategy_visual: true
+
+# Voice / register conventions used by skills when drafting:
+# (Optional — skills will use sensible defaults if omitted.)
+voice:
+  no_sycophancy: true
+  surface_forks_before_resolving: true
+  prefer_observation_over_directive: true

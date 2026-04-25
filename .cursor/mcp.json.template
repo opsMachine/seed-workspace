@@ -1,0 +1,72 @@
+{
+  "_README": "Copy to mcp.json (drop .template), then EDIT every absolute path and env var. The seed ships placeholders; nothing here will work until you replace <<...>> markers. Restart Cursor / AntiGravity after edits.",
+  "_decision_protocol": "Before enabling each MCP below, run the gain-analysis skill — does this give you something your live system doesn't already? If not, leave it disabled.",
+
+  "mcpServers": {
+
+    "transcript-vault": {
+      "_when_to_enable": "When you've decided to run a local transcript index (see Setup-Decisions.md). Requires npm install + a working adapter in infra/transcript-vault-mcp/adapters/.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "tsx",
+        "<<EDIT: absolute path>>/seed-workspace/infra/transcript-vault-mcp/src/mcp-server.ts"
+      ],
+      "env": {
+        "VAULT_DATA_ROOT": "<<EDIT: absolute path>>/seed-workspace/vault",
+        "RECORDER_ADAPTER": "fathom"
+      }
+    },
+
+    "hubspot": {
+      "_when_to_enable": "If your CRM is HubSpot. Use the official HubSpot MCP or a community one. Read tools open; gate writes via your AGENTS.md.",
+      "_setup": "Replace this whole entry with the connection block from your chosen HubSpot MCP package.",
+      "command": "<<EDIT: hubspot-mcp command>>",
+      "args": ["<<EDIT>>"],
+      "env": {
+        "HUBSPOT_API_KEY": "<<EDIT: from .env or env, NEVER commit>>"
+      }
+    },
+
+    "clickup": {
+      "_when_to_enable": "If you use ClickUp for tasks/projects. Read tools open; gate writes.",
+      "_setup": "Replace this whole entry with the connection block from your chosen ClickUp MCP package.",
+      "command": "<<EDIT: clickup-mcp command>>",
+      "args": ["<<EDIT>>"],
+      "env": {
+        "CLICKUP_API_KEY": "<<EDIT>>"
+      }
+    },
+
+    "google-calendar": {
+      "_when_to_enable": "Almost always useful for scheduling-aware sessions. Write tools (create / update / delete event) MUST be gated — see AGENTS.md.",
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp@2.6.1"],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "<<EDIT: absolute path>>/.config/google-calendar-mcp/gcp-oauth.keys.json",
+        "ENABLED_TOOLS": "list-calendars,list-events,search-events,get-event,get-freebusy,get-current-time,list-colors"
+      }
+    },
+
+    "google-drive": {
+      "_when_to_enable": "If you don't symlink Drive folders directly via Drive File Stream (see infra/drive-symlinks/README.md). Symlinks-first is usually higher-leverage; this is the API fallback.",
+      "_setup": "Replace with your chosen Drive MCP package.",
+      "command": "<<EDIT: drive-mcp command>>",
+      "args": ["<<EDIT>>"],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "<<EDIT>>"
+      }
+    },
+
+    "_examples_disabled": {
+      "_note": "Other MCPs to consider, depending on Setup-Decisions.md outcomes:",
+      "_options": [
+        "gmail-mcp — only if email is a primary client comms surface",
+        "notion-mcp — if migrating from / coexisting with Notion",
+        "slack-mcp — if Slack is where decisions actually happen",
+        "github-mcp — for repo / issue / PR awareness"
+      ]
+    }
+
+  }
+}

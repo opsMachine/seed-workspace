@@ -1,0 +1,40 @@
+/**
+ * Otter.ai adapter — STUB. Rename to otter.ts after implementing.
+ *
+ * Otter doesn't have a public REST API at time of writing. Two known paths:
+ *   1) Browser-automation export (Playwright/Puppeteer hitting otter.ai/my_agenda)
+ *   2) Periodic CSV/JSON export from the dashboard, dropped in a watched folder
+ *
+ * If you go path (2), this adapter just reads the latest export folder
+ * instead of hitting an API. Set OTTER_EXPORT_DIR in .env.
+ *
+ * Required env:
+ *   OTTER_API_KEY      (if/when Otter ships a public API)
+ *   OTTER_EXPORT_DIR   (path to a folder of exported JSON, alternative)
+ */
+
+import type { Meeting } from "../src/lib/types.js";
+import type { RecorderAdapter } from "./index.js";
+
+const adapter: RecorderAdapter = {
+  name: "otter",
+
+  async *extract({ sinceISO, cursor }) {
+    throw new Error(
+      "Otter adapter not implemented. See adapters/README.md for the contract; map Otter's speech objects into the Meeting shape from src/lib/types.ts."
+    );
+
+    // Skeleton:
+    //
+    // const exportDir = process.env.OTTER_EXPORT_DIR;
+    // if (!exportDir) throw new Error("Set OTTER_EXPORT_DIR in .env");
+    //
+    // const files = await listJsonFilesNewerThan(exportDir, sinceISO);
+    // for (const batch of chunk(files, 50)) {
+    //   const meetings: Meeting[] = await Promise.all(batch.map(parseOtter));
+    //   yield { meetings, nextCursor: null };
+    // }
+  },
+};
+
+export default adapter;

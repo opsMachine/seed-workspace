@@ -1,0 +1,44 @@
+/**
+ * Fireflies.ai adapter — STUB. Rename to fireflies.ts after implementing.
+ *
+ * Fireflies has a public GraphQL API at https://api.fireflies.ai/graphql.
+ * Auth is a Bearer token from your Fireflies account settings.
+ *
+ * Required env:
+ *   FIREFLIES_API_KEY
+ *
+ * Useful queries:
+ *   - transcripts(fromDate, toDate, limit, skip)
+ *   - transcript(id) → full transcript + summary + speakers
+ */
+
+import type { Meeting } from "../src/lib/types.js";
+import type { RecorderAdapter } from "./index.js";
+
+const adapter: RecorderAdapter = {
+  name: "fireflies",
+
+  async *extract({ sinceISO, cursor }) {
+    throw new Error(
+      "Fireflies adapter not implemented. See adapters/README.md for the contract; map Fireflies' transcript objects into the Meeting shape from src/lib/types.ts."
+    );
+
+    // Skeleton:
+    //
+    // const apiKey = process.env.FIREFLIES_API_KEY;
+    // if (!apiKey) throw new Error("Set FIREFLIES_API_KEY in .env");
+    //
+    // let skip = cursor ? parseInt(cursor, 10) : 0;
+    // const PAGE = 50;
+    //
+    // while (true) {
+    //   const ids = await graphql(...);
+    //   if (ids.length === 0) return;
+    //   const meetings = await Promise.all(ids.map(fetchOne));
+    //   yield { meetings, nextCursor: String(skip + PAGE) };
+    //   skip += PAGE;
+    // }
+  },
+};
+
+export default adapter;

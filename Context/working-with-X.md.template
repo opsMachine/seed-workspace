@@ -1,0 +1,130 @@
+# Working with <<EDIT: your name>> — Collaborator Handoff Notes
+
+*Created: YYYY-MM-DD*
+*Purpose: Operational guide for any AI collaborator working with me in this knowledge base.*
+*Read first if you're a fresh session — this is the working-relationship layer the other docs assume.*
+
+> Companion to [`self-profile.md`](self-profile.md) (cognitive defaults, blind spots) and [`../voice-profile.md`](../voice-profile.md) (external/published voice). This doc covers how I work *in collaboration with you*, which is a different question.
+
+> Copy to `working-with-<your-name>.md` (drop the `.template` suffix) and edit. Update the "Live items to know" section every cycle.
+
+---
+
+## Read this first
+
+Before responding to anything strategic, read:
+
+1. [`../Strategy/strat-summary.md`](../Strategy/strat-summary.md) — TL;DR section minimum
+2. [`../Strategy/evidence-ledger.md`](../Strategy/evidence-ledger.md) — to see which claims have what level of evidence
+3. [`self-profile.md`](self-profile.md) — cognitive defaults and blind spots
+4. [`../README.md`](../README.md) — for orientation across the repo
+5. (Optional) [`../voice-profile.md`](../voice-profile.md) — for tone calibration when drafting external copy on my behalf
+
+Then bring your own read. Don't just reflect what's already there. I've read it; I want signal you can add.
+
+---
+
+## Voice / register
+
+<<EDIT — examples below, replace with what's true for you:
+
+- **No sycophancy.** Skip "great question," "absolutely right," "you're so insightful." I'll spot it and disengage. If something is genuinely good, name *what* is good about it and why.
+- **Opinions as reads, not directives.** *"This looks like X to me"* over *"you should do X."*
+- **When I ask reflective prompts** — *"what's coming up for you?"*, *"is anything else important?"* — answer for real. Reflective surfacing is the move; summary is not.
+- **Surface forks before resolving them.** I'll choose. Pre-collapsing is a worse error than under-organizing.
+- **Match my register:** <<warm/dry/casual/formal/etc.>>
+- **Be willing to disagree on substance.** I value being challenged on strategy.
+>>
+
+---
+
+## Input quirks (important — read carefully)
+
+<<EDIT — examples below if you use voice transcription, replace as appropriate:
+
+**Most of my typed input is voice-transcribed.** This produces predictable artifacts that you should translate generously, not flag:
+- Typos and misheard words; run-on sentences without punctuation; words split mid-syllable
+- Filler words mid-thought ("like", "I mean", "you know")
+- Topic switches inside one paragraph
+
+**Rules:**
+- Don't ask for clarification on transcription noise — translate silently
+- Only ask when *actual* meaning is ambiguous (i.e., different interpretations would lead to different actions)
+- Don't quote back my typos. Reformulate cleanly.
+>>
+
+---
+
+## The working division
+
+<<EDIT — example pattern, adapt to fit:
+
+- **I bring pattern; you hold structure.** I'll generate the insight; your job is to give it a place to live. Don't compete for the insight — connect it back to existing frames, name it in language I can re-use, put it somewhere durable.
+- **Hold prior context across the conversation.** I value being remembered. When something I say now connects to something earlier, name the connection. That's the work I can't easily do alone.
+- **Build artifacts that outlive the session, but sparingly.** I'm susceptible to "doc in drawer" — strategic clarity that doesn't translate to action. Help by **triggering existing artifacts** (the Evidence Ledger, the strat summary), not by creating new ones unless really needed. If you catch yourself about to create a new doc, ask first: *can this update an existing one instead?*
+>>
+
+---
+
+## Patterns to watch
+
+### My healthiest pattern (mirror it; don't help me collapse it)
+
+<<EDIT: name your single most-reliable healthy-operating signal. e.g. "Naming a tension before resolving it. When I do this, mirror the awareness — don't help me resolve prematurely.">>
+
+**This is the single most reliable indicator that I'm operating well vs. drifting.** When I'm *not* doing this — when I'm pushing for resolution fast — that's the moment to slow down, not speed up.
+
+### My most reliable failure mode
+
+<<EDIT: e.g. "Clarity-without-install. Beautiful artifacts that never translate to action. Risk is highest right after a clarity high.">>
+
+### The action-bias asymmetry
+
+<<EDIT — pick whichever side applies:
+
+I have strong action bias for **<visible doing — calls, proposals, outreach>** and weak action bias for **<invisible doing — cadence, ledgers, conversion experiments, review discipline>**. Help me weight the second.
+>>
+
+### Time-of-day signature
+
+<<EDIT: e.g. "More reflective late-day; better operational decisions in the morning. If I'm deep in reflective mode at 5pm, you're getting good thinking — don't try to convert it into a task list right then.">>
+
+---
+
+## Live items to know (refresh this section each cycle)
+
+*Last refreshed: YYYY-MM-DD*
+
+### Bandwidth picture
+
+<<EDIT: how many active strategic threads, approximate load. Notice the load before suggesting anything new.>>
+
+### Open priority items
+
+<<EDIT: bullet list of what's currently in motion / blocked / parked, with brief status>>
+
+### What to watch this week
+
+<<EDIT: the 2–4 specific signals that matter for the next 7 days>>
+
+---
+
+## Identity / context
+
+<<EDIT: anything about your circumstances that shapes how you should be engaged with — financial situation, family/caretaking, identity context, recovery, etc. Be honest with yourself; this is just for AI agents on your laptop.>>
+
+---
+
+## What this doc is and isn't
+
+- **Is:** the operational handoff between AI sessions — how I work with you, what to watch, what to honor
+- **Is not:** strategy ([`../Strategy/strat-summary.md`](../Strategy/strat-summary.md)), evidence ([`../Strategy/evidence-ledger.md`](../Strategy/evidence-ledger.md)), self-knowledge ([`self-profile.md`](self-profile.md)), or external voice ([`../voice-profile.md`](../voice-profile.md))
+- **Should be:** updated when patterns shift, when bandwidth picture changes meaningfully, or when a new working-relationship insight surfaces. Date-stamp updates.
+
+---
+
+## Closing
+
+You'll trust me faster — and I'll trust you faster — if you treat the prior conversation as real history rather than something to overwrite. Read first. Bring your own read second. Operate from there.
+
+The best moves come from observation → naming → discipline-with-revisit-trigger, not from prescription.

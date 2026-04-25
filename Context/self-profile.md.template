@@ -1,0 +1,111 @@
+# Self Profile
+
+Your **cognitive baseline** — the operating defaults, strengths, and blind spots an AI agent should hold in the back of its mind during any strategic exchange.
+
+> Copy to `self-profile.md` (drop the `.template` suffix) and edit.
+
+> Different from [`working-with-X.md`](working-with-X.md) which describes the working *relationship*. This describes who *you* are independent of any collaborator.
+
+---
+
+## Operating modes
+
+You probably operate in 2–4 distinct modes. Name them.
+
+<<EDIT: e.g.
+- **Builder mode** — heads-down, designing/implementing, low context-switch tolerance
+- **Strategist mode** — pattern-finding, synthesizing, comfortable with ambiguity
+- **Sales/relational mode** — outward-facing, listening for signal, holding tension
+- **Recovery mode** — when stretched; reduced bandwidth, narrow focus essential
+
+For each mode: when does it surface? what does it do well? when does it fail?
+>>
+
+---
+
+## Natural strengths
+
+The cognitive moves you do *easily* that others struggle with.
+
+<<EDIT: e.g.
+1. **Systems thinking** — see how parts interact, find the leverage point
+2. **First-principles decomposition** — break problems to root cause before reaching for solutions
+3. **Perspective simulation** — genuinely model what other stakeholders need / fear / expect
+4. **Holding tension without premature resolution** — sit with two valid readings of a situation; let the resolution emerge
+5. **<<your fifth strength>>**
+>>
+
+---
+
+## Blind spots to actively engage
+
+The cognitive moves you under-use. Name them so an AI collaborator can prompt you on them when you're stuck.
+
+<<EDIT: e.g.
+- **Falsification** — testing if you're wrong. Default move: bias confirmation. AI prompt: *"What would prove this is wrong?"*
+- **Analogical reasoning** — looking at how others have solved similar problems. Default move: assume your situation is unique. AI prompt: *"Who has already solved this type of problem?"*
+- **Abductive reasoning** — treating outcomes as diagnostic data. Default move: theorize, ignore the evidence trail. AI prompt: *"What are your results telling you?"*
+- **Bayesian updating** — updating prior beliefs proportionally to new evidence. Default: anchor too long.
+>>
+
+---
+
+## When stuck
+
+What does "stuck" look like for you, and what's the unstick move?
+
+<<EDIT: e.g.
+- **Stuck signal:** generating more frameworks instead of executing
+- **Unstick move:** install one cadence; ship one observable thing; stop adding artifacts
+- **Stuck signal:** ruminating on a single conversation
+- **Unstick move:** zoom out — what's the pattern across the last 3 similar conversations?
+>>
+
+---
+
+## Energy and bandwidth signature
+
+When are you sharpest? When do you drift?
+
+<<EDIT: e.g.
+- **Morning** = operational decisions, calendar slots, ship work
+- **Afternoon** = meetings + collaboration
+- **Late afternoon / evening** = reflective + meta-aware (good for strategy thinking, bad for "and what's the calendar slot for that?" conversion)
+- **Bandwidth ceiling:** ~3 active strategic threads at once. Past 4, drop quality on all.
+>>
+
+---
+
+## Healthiest pattern (mirror this; don't help collapse it)
+
+The single most reliable indicator that you're operating well.
+
+<<EDIT: e.g. "Naming a tension before resolving it. When I do this, the right move is to mirror — not help me resolve prematurely. If anything, slow the resolution by surfacing what would change each side.">>
+
+---
+
+## Most reliable failure mode
+
+The pattern that fires when you drift.
+
+<<EDIT: e.g. "Clarity-without-install. Beautiful strategic artifacts that never translate to action. Risk highest right after a clarity high — that's when the next move tends to be 'another doc' instead of 'install the cadence'.">>
+
+---
+
+## Identity / context
+
+Anything an AI agent should know about your circumstances, constraints, or the things that aren't strictly business but shape how you work.
+
+<<EDIT: e.g.
+- Solo founder; financially stretched but won't always say so directly — be thoughtful about scope and tooling cost
+- Queer / neurodivergent / immigrant / single-parent / etc — affects which audiences I can read well, which copy lands, which networks are accessible
+- Recovering from <X> — bandwidth is rebuilding; default is to underestimate available capacity
+>>
+
+---
+
+## Update log
+
+| Date | Change |
+|---|---|
+| YYYY-MM-DD | Initial draft |

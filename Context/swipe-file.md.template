@@ -1,0 +1,81 @@
+# Swipe File
+
+A library of **analogous copy from other businesses** that lands well on similar buyers. Reference material for when you're drafting your own copy and want to pattern-match what works.
+
+> Copy to `swipe-file.md` (drop the `.template` suffix). Add an entry whenever you encounter copy in the wild that genuinely lands on someone like your buyer.
+
+---
+
+## Why this exists
+
+You write better copy when you can pattern-match against examples that resonate, vs. trying to invent voice from scratch every time. The swipe file is a curated set of "this is the right shape for my audience."
+
+Don't include things that are merely *good* — only things that hit your specific buyer's nervous system. Quality bar: would *your* buyer read this and lean in?
+
+---
+
+## Entry template
+
+```
+## Entry N: <short name>
+
+**Source:** <URL or reference>
+**Captured:** YYYY-MM-DD
+**What it sells:** <short description of the actual offering>
+**Audience overlap with mine:** <high / medium / low — and why>
+
+### What's working
+
+- <pattern 1 — e.g. "leads with the problem in the buyer's exact language">
+- <pattern 2 — e.g. "names what it isn't, not just what it is">
+- <pattern 3 — e.g. "concrete result with a number, not a vague benefit">
+
+### Pull-quotes worth borrowing
+
+> "<exact quote 1>"
+> "<exact quote 2>"
+
+### How I'd adapt for my work
+
+<1–3 sentences naming the structural move you'd take and how it'd land for your audience>
+```
+
+---
+
+## Entry 1: <<EDIT: first example>>
+
+<<EDIT — example structure:
+
+**Source:** https://example.com/landing
+**Captured:** YYYY-MM-DD
+**What it sells:** <product>
+**Audience overlap with mine:** medium — same nervous-system signals (overwhelm + bottleneck), different surface (eCommerce vs. services)
+
+### What's working
+
+- Headline names the problem in the buyer's exact phrasing ("you can't take a real day off")
+- The "for / not for" section is unusually direct — turns away the wrong fit explicitly
+- Pricing page leads with what it includes BEFORE the number
+
+### Pull-quotes worth borrowing
+
+> "If you've ever opened your laptop on vacation, this is for you."
+> "We don't sell software. We sell the relief of not being on call."
+
+### How I'd adapt for my work
+
+The "for / not for" section is the highest-leverage move for me — my audience self-qualifies harder than they buy.
+>>
+
+---
+
+## Patterns I keep noticing
+
+As entries accumulate, the cross-cutting patterns surface here. Add to this section every ~5 entries.
+
+<<EDIT: e.g.
+
+1. **Name the problem in the buyer's exact words first.** Not your reframe; their language.
+2. **Lead with what it isn't.** "We don't <thing they expect>." Disarms.
+3. **Whitespace earns trust.** Short paragraphs, generous spacing, never crammed.
+>>

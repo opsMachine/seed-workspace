@@ -1,0 +1,29 @@
+/**
+ * Granola adapter — STUB. Rename to granola.ts after implementing.
+ *
+ * Granola stores notes locally on disk in addition to syncing.
+ * Two paths:
+ *   1) Read directly from the local Granola SQLite/JSON store
+ *      (~/Library/Application Support/Granola/ on macOS, similar elsewhere)
+ *   2) Use Granola's web API once they ship one
+ *
+ * The local-store path is usually fastest and most reliable for v1.
+ *
+ * Required env:
+ *   GRANOLA_LOCAL_STORE  (path to the on-disk data folder)
+ */
+
+import type { Meeting } from "../src/lib/types.js";
+import type { RecorderAdapter } from "./index.js";
+
+const adapter: RecorderAdapter = {
+  name: "granola",
+
+  async *extract({ sinceISO, cursor }) {
+    throw new Error(
+      "Granola adapter not implemented. See adapters/README.md for the contract; map Granola's note objects into the Meeting shape from src/lib/types.ts."
+    );
+  },
+};
+
+export default adapter;

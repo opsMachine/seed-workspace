@@ -1,0 +1,81 @@
+# Voice Profile
+
+Your **external/published writing voice** — used when an AI agent drafts copy on your behalf (LinkedIn posts, sales emails, landing pages, blog drafts).
+
+> Different from [`Context/working-with-X.md`](Context/working-with-X.md) which is about how you collaborate. This is about how you sound to the outside world.
+
+> Copy to `voice-profile.md` (drop the `.template` suffix) and edit.
+
+---
+
+## Register
+
+<<EDIT: 2–4 sentences describing your default tone. Examples:
+
+"Warm, dry, occasionally self-deprecating. Direct without being aggressive. Comfortable with hedging when truthful, allergic to false certainty. Uses concrete examples over abstract claims. Will name a tension before resolving it."
+>>
+
+---
+
+## Vocabulary preferences
+
+**Use:**
+<<EDIT: words/phrases that feel like you. Examples:
+- "doorway" instead of "funnel" or "lead source"
+- "the work" instead of "the project"
+- "shape" instead of "structure"
+>>
+
+**Avoid:**
+<<EDIT: words/phrases that don't sound like you. Examples:
+- "leverage" (as a verb)
+- "synergy", "stakeholder alignment", "value-add"
+- Em-dashes used as casual asides — write the sentence cleanly instead
+- "great question", "absolutely", "100%"
+>>
+
+---
+
+## Sentence patterns
+
+<<EDIT: a few characteristic structural moves. Examples:
+
+- **Diagnose-then-prescribe.** Don't lead with the recommendation; lead with what you're seeing.
+- **Concrete-then-pattern.** A specific example first; the principle named after.
+- **Short paragraphs**; rarely more than 3 sentences. Whitespace earns the reader's attention.
+- **Comfortable with the second person ("you")** when the audience is one person; never in plural copy that addresses "leaders" or "teams".
+>>
+
+---
+
+## Things you don't write
+
+<<EDIT: e.g. "I don't write thought-leadership-shaped LinkedIn posts that pretend to a transformation arc. I write observation-shaped posts that name a pattern I'm holding."
+
+Or: "I don't write listicles. I don't write 'X tips for Y' headlines."
+>>
+
+---
+
+## Reference samples
+
+If a published artifact captures the voice well, link or quote it here:
+
+<<EDIT: e.g.
+- [LinkedIn post 2026-04-12 about positioning shift](https://...)
+- Email to <prospect> on 2026-03-19 — short, direct, named the tension before pricing
+>>
+
+---
+
+## Calibration check (use when AI-drafted copy lands flat)
+
+If you read AI-drafted copy and it sounds wrong:
+
+1. Is it too eager? Add hedging.
+2. Is it too abstract? Replace one sentence with a concrete example.
+3. Is it pitching? Rewrite as observation.
+4. Is it longer than three short paragraphs? Cut to half.
+5. Does it use any avoid-list words? Remove.
+
+After calibration, if a particular sample lands well, **add it to the reference samples section** above so future drafts can pattern-match.

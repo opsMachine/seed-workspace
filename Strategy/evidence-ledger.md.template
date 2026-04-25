@@ -1,0 +1,120 @@
+# Evidence Ledger
+
+The **falsification layer** beneath [`strat-summary.md`](strat-summary.md). Tracks supporting and contradicting cases for each major strategic claim. Counters drift; addresses the abductive-reasoning blind spot.
+
+> Copy to `evidence-ledger.md` (drop the `.template` suffix). Update on every engagement close, every loss, every discovery surprise, every counter-example.
+
+---
+
+## Purpose
+
+Strategic claims tend to drift toward what feels right rather than what's evidenced. The Evidence Ledger keeps each claim *answerable* to data:
+
+- What level of evidence do we have?
+- What would falsify it?
+- What's the most recent supporting case? Most recent contradicting case?
+
+Without this, "lessons learned" just become permanent assumptions. With this, every claim is a hypothesis with a known evidence weight.
+
+---
+
+## Evidence levels
+
+| Level | Name | Meaning |
+|---|---|---|
+| L1 | Pattern-match | Saw it once, looks suggestive |
+| L2 | Replicated | Same pattern in 2–3 distinct cases |
+| L3 | Predictive | Can predict outcomes from the pattern |
+| L4 | Sustained | Holds across many cases, across time, across contexts |
+
+A claim at L1 should be held loosely. A claim at L4 has earned the right to drive operating decisions.
+
+---
+
+## How to use this doc
+
+1. **Per-claim section** for each major strategic claim from `strat-summary.md`. Mirror the claim names exactly so cross-referencing is mechanical.
+2. **Update on every cycle review** (Friday weekly review is the natural slot). Walk every claim; add new evidence rows; update levels; flag contradictions.
+3. **Contradictions are high-value.** A row marked `CONTRADICTS` is more important than five `SUPPORTS` rows. Surface them; don't hide them.
+4. **Retire claims** that get decisively contradicted. Move to the "Retired claims" section at the bottom with a one-line reason and date. Don't delete.
+
+---
+
+## Per-claim sections
+
+Use this template, one per major claim:
+
+```
+## Claim: <claim name (mirror strat-summary.md)>
+
+**Current level:** L<1-4>
+**Last updated:** YYYY-MM-DD
+
+**Statement:** <one-sentence claim>
+
+**What would change it (falsification criteria):**
+- <criterion 1>
+- <criterion 2>
+
+| Date       | Engagement / Source        | Direction      | Notes |
+|------------|----------------------------|----------------|-------|
+| YYYY-MM-DD | <engagement / call / etc.> | SUPPORTS / CONTRADICTS / NEUTRAL | <1-2 sentences> |
+```
+
+---
+
+## Active claims
+
+<<EDIT: build out one section per claim. Remove this guidance after first edit.>>
+
+### Claim: <example>
+
+**Current level:** L1
+**Last updated:** YYYY-MM-DD
+
+**Statement:** <<EDIT: one-sentence claim>>
+
+**What would change it (falsification criteria):**
+- <<EDIT: criterion 1>>
+- <<EDIT: criterion 2>>
+
+| Date | Engagement / Source | Direction | Notes |
+|---|---|---|---|
+| | | | |
+
+---
+
+## Recent closes / losses are unmined data
+
+When an engagement closes (won or lost), do a 30–60 min forensic before the memory fades. For each close:
+
+- What was the **forcing event** that made them say yes (or no)?
+- What was the **smallest commitment** that unstuck the decision?
+- What **channel** did they come through?
+- Did our positioning **land in their words** or did we have to translate?
+- What did they **think they were buying** vs. what they actually bought?
+
+Each forensic produces 1–3 evidence rows for the claims above (or, occasionally, surfaces a new claim that should be added to `strat-summary.md`).
+
+<<EDIT: list completed forensics here — date, engagement, link to detailed notes if any>>
+
+---
+
+## Retired claims
+
+Claims decisively contradicted and removed from the active strategy. Kept here so the reasoning trail isn't lost.
+
+<<EDIT: e.g.
+
+| Date retired | Claim | Reason |
+|---|---|---|
+| YYYY-MM-DD | <claim> | Decisive contradiction in <engagement>; the underlying mechanism didn't hold. See `Strategy/z-archived/` for the original detail. |
+>>
+
+---
+
+## Update log
+
+| Date | Change |
+|---|---|
+| YYYY-MM-DD | Initial draft |

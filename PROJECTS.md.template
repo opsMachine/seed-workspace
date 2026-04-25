@@ -1,0 +1,92 @@
+# Projects Manifest
+
+*Last updated: YYYY-MM-DD*
+
+Single source of truth for every project reachable from this meta-workspace, plus the recipe to recreate the topology on a fresh machine.
+
+> Copy to `PROJECTS.md` (drop the `.template` suffix) and edit as you add projects.
+
+> **The pattern:** This repo (`<<EDIT: your meta-workspace name>>`) is the **meta-workspace**. Open it in Cursor / AntiGravity as the workspace root — that loads the registered MCPs and gives the agent direct filesystem access to every linked project. Working from inside an individual client repo as the workspace root works for git operations and quick edits but loses MCP access (Cursor only loads MCPs from the workspace root's `.cursor/mcp.json`, not from symlinked subdirs).
+
+---
+
+## Infrastructure (tools and corpora)
+
+| Path | Repo | Visibility | Role |
+|---|---|---|---|
+| `infra/transcript-vault-mcp/` (in-tree) | (this repo) | <<EDIT: private/public>> | Local meeting knowledge base — extract / transform / embed / MCP |
+| `vault/` (in-tree, gitignored content) | (this repo) | <<EDIT>> | Corpus + labels — `data/`, `vault/`, `config/labels.yml` |
+| `(this repo)` | <<EDIT: GitHub URL>> | <<EDIT>> | Meta-workspace + strategy + container layer |
+
+## Personal projects
+
+| Path | Repo | Status | Purpose |
+|---|---|---|---|
+| `personal/<<EDIT>>/` → `../../<<EDIT>>` | <<EDIT: GitHub URL>> | <<EDIT: status>> | <<EDIT: purpose>> |
+
+## Client engagements
+
+| Path | Repo | Status | Next milestone |
+|---|---|---|---|
+| `clients/<<EDIT>>/` → `../../<<EDIT>>` | <<EDIT: GitHub URL>> | <<EDIT>> | <<EDIT>> |
+
+---
+
+## Setup on a fresh machine
+
+```bash
+cd ~/Documents/GitHub
+
+# Clone the meta-workspace
+git clone <<EDIT: meta-workspace URL>>
+
+# Clone client engagements (one per active client)
+git clone <<EDIT: client URL>> <<EDIT: client folder>>
+
+# Wire the meta-workspace (one-line shell, ask your AI if you want)
+cd <<EDIT: meta-workspace folder>>
+ln -s ../.claude/skills .cursor/skills      # so IDE skill discovery sees them
+mkdir -p clients personal vault/People vault/Companies
+ln -s "../../<<EDIT: client folder>>" clients/<<EDIT: client slug>>
+
+# Shell env (add to ~/.zshrc or equivalent)
+export VAULT_DATA_ROOT="$HOME/Documents/GitHub/<<EDIT: meta-workspace folder>>/vault"
+# Plus any adapter / API keys you use, e.g.
+# export FATHOM_API_KEY=...
+
+# Cursor / AntiGravity: open the meta-workspace folder as the workspace root.
+```
+
+Optional: if using Claude Desktop, also configure `~/.config/Claude/claude_desktop_config.json` (or macOS equivalent) to register the same MCPs with the same env block.
+
+---
+
+## Conventions for adding new projects
+
+- **New client engagement:**
+  1. Create the repo as a sibling of the meta-workspace
+  2. Initialize and push to a private GitHub remote
+  3. Symlink: `cd <meta>/clients && ln -s "../../<client-name>" <slug>` (one line; ask your AI if you want)
+  4. Add a row to the Client engagements table above
+  5. Drop an `AGENTS.md` in the client repo for engagement-specific AI context
+
+- **New personal project:**
+  1. Create as a sibling
+  2. Symlink under `personal/`
+  3. Add to Personal projects table
+
+- **New tool repo:**
+  1. Create as a sibling
+  2. Either symlink at top level OR drop into `infra/` if it's a substrate tool
+  3. Add to Infrastructure table
+
+---
+
+## Why client repos live as siblings (not under `clients/` for real)
+
+- **IP / data isolation:** each engagement has its own private GitHub repo with its own visibility, history, and access controls
+- **Blast radius:** a misconfigured `.gitignore` in the meta-workspace can never accidentally expose a client's private files
+- **Per-engagement git history:** clean commits per client, no cross-contamination
+- **Symlinks-into-meta** give you workspace-level convenience (one IDE window, full context loaded) without giving up per-repo isolation
+
+This is the **"personal infra travels via tooling, client work stays isolated"** pattern.

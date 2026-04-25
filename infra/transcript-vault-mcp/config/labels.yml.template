@@ -1,0 +1,55 @@
+# config/labels.yml — taxonomy source of truth
+#
+# This is a TEMPLATE. Copy to `labels.yml` (drop the `.template` suffix)
+# before running any of the prep:* scripts. Hand-editable. Merged into by
+# `npm run apply-labels`.
+#
+# Three sections: people / call_types / companies. Each maps a key
+# (email, recording_id, or domain) to a list of relationship tags + an
+# optional notes field.
+#
+# Relationship tags (per person):
+#   advisor_to, advisor, prospective_advisor, client, former_client,
+#   prospective_client, partner, former_partner, prospective_partner,
+#   former_prospective_partner, candidate, vendor, team, colleague,
+#   friend, family, connection
+#
+# Call-type tags (per meeting):
+#   sales, qualification, prospecting, demo, onboarding, check_in,
+#   advisory, pitch, interview, planning, strategy, networking,
+#   internal, meetings, social
+#
+# Company tags (per domain):
+#   self, client_org, former_client_org, prospective_client_org,
+#   partner_org, former_partner_org, prospective_partner_org,
+#   former_prospective_partner_org, advisor_to_org, advisor_org,
+#   prospective_advisor_org, vendor_org, former_vendor_org, friend_org
+#
+# Auto-derived tags (NOT authored here — computed at transform time):
+#   - internal  : meeting_type != one_or_more_external
+#   - advisory  : every external attendee has advisor_to
+#
+# Optional `skipped:` section can list emails / domains to exclude from
+# the prep dossier candidate lists (without affecting indexing).
+
+people: {}
+  # example@example.com:
+  #   relationships:
+  #     - "client"
+  #   notes: "Friendly, project finished March 2026"
+
+call_types: {}
+  # 1234567:
+  #   tags:
+  #     - "sales"
+  #     - "qualification"
+
+companies: {}
+  # example.com:
+  #   tags:
+  #     - "client_org"
+  #   notes: "Friendly client domain"
+
+skipped:
+  people: []
+  companies: []
