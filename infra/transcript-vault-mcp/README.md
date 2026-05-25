@@ -1,10 +1,46 @@
 # transcript-vault-mcp
 
-Local-first knowledge base built from meeting recordings, exposed to AI clients (Cursor, AntiGravity, Claude Desktop) through a local MCP server.
+Local-first semantic search MCP built from your meeting recorder's data. Runs entirely on disk — no third-party AI API required for retrieval. Exposes 12 tools and 4 workflow prompts to any MCP-capable AI client (Cursor, Claude Desktop, Claude Code).
 
-Generalized from [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP) — the Fathom-specific extraction is now one adapter among several. Swap recorders by writing a single ~100-line adapter; everything else (transform, embed, MCP server, the four workflow prompts) is recorder-agnostic.
+## Origin and motivation
 
-> **Decide if you need this first.** This is a local index. It exists to give you rapid + deep + semantic search across your transcripts in ways your recorder's UI doesn't. If your recorder's native search is good enough for how you actually use it, skip this whole subsystem. See [`../../PHILOSOPHY.md`](../../PHILOSOPHY.md) and the `gain-analysis` skill.
+This started as [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP) — a Fathom-specific tool built to answer a single frustration: the native Fathom UI can't search semantically across years of recordings, pull everything ever said about a company in one query, or verify a strategic claim against the corpus. Those are AI-native capabilities the recorder UI fundamentally won't build because they require a local index.
+
+After using it, three design decisions became clear that led to this generalized version:
+1. The extraction layer (recorder API calls) should be swappable — everything else is recorder-agnostic
+2. The labeling system (who is a client vs. advisor vs. prospect) should be human-in-the-loop with a YAML source of truth, not inferred automatically
+3. The research methodology should ship alongside the MCP as a skill, so the AI knows how to use it rigorously rather than naively
+
+The result: swap recorders by writing a single ~100-line adapter. Everything else (transform, embed, search, MCP server, workflow prompts, research discipline) stays the same.
+
+## What the MCP exposes
+
+**12 tools:**
+
+| Tool | What it does |
+|---|---|
+| `list_meetings` | Filter meetings by person, company, date, relationship tag, call type |
+| `get_meeting` | Full metadata, summary, and participants for a single recording |
+| `find_person` | Search participants by name or email substring |
+| `find_company` | Search companies by domain |
+| `list_people_by_relationship` | All people carrying a given relationship tag (e.g. all clients) |
+| `keyword_search` | FTS5 full-text search over titles and summaries |
+| `semantic_search` | Vector search across transcript chunks — conceptual, not keyword-dependent |
+| `get_entity_timeline` | Chronologically ordered mentions of a person, company, project, or topic |
+| `get_project_status` | Inferred current state of a named project or deal, with history |
+| `verify_claim` | **Dual-retrieval:** finds both supporting *and* contradicting evidence for a stated claim |
+| `get_transcript` | All indexed transcript chunks for a recording, ordered by timestamp |
+| `build_context` | Semantic search formatted as a ready-to-use markdown context block |
+
+**4 workflow prompts** (orchestrate multiple tools into complete outputs):
+- `client_persona` — pains, goals, objections, decision style, with citations
+- `sales_coaching` — timestamped coaching review of a single call
+- `content_from_meetings` — themes and pull-quotes across meetings on a topic
+- `account_prep` — pre-meeting briefing: relationship state, open actions, unresolved concerns
+
+The research methodology (triangulation protocol, attribution discipline, temporal resolution, roleplay guardrails) ships as a skill at `skills/transcript-research/SKILL.md` and is also served as an MCP resource (`skill://transcript-research`) so AI clients can fetch it directly without IDE skill discovery.
+
+> **Decide if you need this first.** If your recorder's native search is good enough for how you actually use it, skip this whole subsystem. See [`../../PHILOSOPHY.md`](../../PHILOSOPHY.md) and the `gain-analysis` skill.
 
 ---
 

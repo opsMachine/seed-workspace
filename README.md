@@ -41,6 +41,25 @@ seed-workspace/
 └── .claude/skills/             ← the seed's skills
 ```
 
+## The technical substrate: transcript-vault-mcp
+
+[`infra/transcript-vault-mcp/`](infra/transcript-vault-mcp/) is the most substantial piece of working infrastructure in the repo. It's a local-first semantic search MCP built from your meeting recorder's data — no third-party AI API required for retrieval, everything runs on disk.
+
+**What it does that your recorder's UI can't:**
+- Semantic search across every transcript you've ever recorded, in one query
+- Pull the full history of every conversation with a person or company, chronologically ordered
+- Verify a claim by retrieving *both* supporting and contradicting evidence (dual-retrieval)
+- Infer and track project/deal status from mentions across meetings over time
+- Build pre-meeting briefings, client personas, and sales coaching reviews as MCP workflow prompts
+
+**Stack:** TypeScript, SQLite + FTS5 (keyword search), [LanceDB](https://lancedb.github.io/lancedb/) + `@xenova/transformers` (local 384-dim embeddings — no OpenAI dependency), MCP stdio server, adapter interface for any recorder. Fathom is fully implemented; Fireflies/Otter/Granola ship as stubs.
+
+Originally built for Fathom specifically as [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP), then generalized so the extraction layer is swappable while everything else (transform, embed, search, MCP server, workflow prompts) stays recorder-agnostic.
+
+→ Full documentation: [`infra/transcript-vault-mcp/README.md`](infra/transcript-vault-mcp/README.md)
+
+---
+
 ## The skills (the methodology, codified)
 
 - **[`harvest-learnings`](.claude/skills/harvest-learnings/SKILL.md)** + **[`integrate`](.claude/skills/integrate/SKILL.md)** — capture-then-integrate lifecycle with explicit per-edit approval gates
