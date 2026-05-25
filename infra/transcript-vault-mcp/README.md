@@ -40,6 +40,8 @@ The result: swap recorders by writing a single ~100-line adapter. Everything els
 
 The research methodology (triangulation protocol, attribution discipline, temporal resolution, roleplay guardrails) ships as a skill at `skills/transcript-research/SKILL.md` and is also served as an MCP resource (`skill://transcript-research`) so AI clients can fetch it directly without IDE skill discovery.
 
+→ Architecture deep-dive (pipeline, storage layout, design decisions): [`ARCHITECTURE.md`](ARCHITECTURE.md)
+
 > **Decide if you need this first.** If your recorder's native search is good enough for how you actually use it, skip this whole subsystem. See [`../../PHILOSOPHY.md`](../../PHILOSOPHY.md) and the `gain-analysis` skill.
 
 ---

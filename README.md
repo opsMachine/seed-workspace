@@ -56,7 +56,8 @@ seed-workspace/
 
 Originally built for Fathom specifically as [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP), then generalized so the extraction layer is swappable while everything else (transform, embed, search, MCP server, workflow prompts) stays recorder-agnostic.
 
-→ Full documentation: [`infra/transcript-vault-mcp/README.md`](infra/transcript-vault-mcp/README.md)
+→ Full documentation: [`infra/transcript-vault-mcp/README.md`](infra/transcript-vault-mcp/README.md)  
+→ Architecture deep-dive: [`infra/transcript-vault-mcp/ARCHITECTURE.md`](infra/transcript-vault-mcp/ARCHITECTURE.md)
 
 ---
 
