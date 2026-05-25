@@ -154,6 +154,8 @@ The user may:
 
 **Never proceed past this gate without explicit go-ahead.** "Looks good" is not approval — get edit IDs or "all".
 
+> **Note on enforcement:** This gate is a UX convention enforced by prompt instruction, not a technical lock. The model can technically bypass it if the user is ambiguous. Treat it as a strong norm, not a hard boundary — it only holds when both parties respect the protocol.
+
 ---
 
 ## Step 7: Apply approved edits

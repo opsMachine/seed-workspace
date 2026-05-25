@@ -77,7 +77,7 @@ If you switch recorders, **delete `data/sync-state.json` first** — its `downlo
 
 ## What gets committed
 
-Tracked: `vault/People/*.md`, `vault/Companies/*.md`, `config/labels.yml`. Everything else under the data root is gitignored — see `.gitignore`. Sensitive transcripts and machine-rebuildable artifacts (raw JSON, vectors, SQLite, sync state, proposals, candidates, logs, lock) never enter version control.
+Tracked: `config/labels.yml` only. `vault/People/` and `vault/Companies/` are generated output from `apply-labels` — they're gitignored because tracking generated artifacts alongside their source (`labels.yml`) creates noisy diffs and sync risk. Rebuild them any time with `npm run apply-labels`. Everything else (raw JSON, vectors, SQLite, sync state, proposals, candidates, logs, lock, transcripts) is also gitignored — see `.gitignore`.
 
 ---
 
@@ -131,4 +131,17 @@ In Cursor: `@transcript-vault` and ask. In Claude Desktop: `+` menu → MCP → 
 - Email addresses lowercased when used as keys.
 - Generic email domains (gmail, yahoo, hotmail, outlook, icloud, aol, protonmail, mail.com) excluded from the company index.
 - Meeting markdown filenames are `<recording_id>.md`; titles live in front-matter + h1 only — they don't leak through filenames.
-- People/Companies markdown render Meeting History as opaque `[Meeting #12345](../Meetings/12345.md)` links so titles + dates stay out of git.
+
+---
+
+## Known limitations / future work
+
+- **Smoketest requires a populated corpus.** `npm run mcp:test` connects a real MCP client against the server; it cannot run against an empty vault because most tool assertions require at least one meeting. No fixture data or mock layer exists yet. This means the smoketest cannot run in CI on a fresh clone — it's a local integration check only.
+
+- **`scaffold-cadence` cadence count is unenforced.** The skill warns against installing more than ~4 cadences but does not prevent it — the check is a prompt instruction with no enforcement mechanism. A future improvement would be a small validation script (or an explicit count check that the skill calls before proceeding).
+
+- **`integrate` approval gate is a UX convention, not a technical lock.** The per-edit approval step relies on the AI respecting the protocol. There's no mechanism to block writes if the model interprets an ambiguous user response as approval. See the note in the skill itself.
+
+- **Speaker attribution in transcripts is incomplete.** Many chunks surface as `Unknown` speaker. This is an upstream data-quality issue (varies by recorder). The A2 discipline in the transcript-research skill addresses it at the usage layer, but the underlying data will remain imperfect until recorders improve speaker diarization.
+
+- **`vault/People/` and `vault/Companies/` are not incrementally rebuilt.** `apply-labels` re-runs transform on the full corpus, which can be slow on large vaults. A delta-only rebuild (re-transform only the meetings whose label assignments changed) would be a meaningful performance improvement.

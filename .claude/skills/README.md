@@ -29,3 +29,7 @@ After bootstrap, the `discover-stack` skill writes the resolved paths into `.ski
 ## Adding new skills
 
 Same convention: `<name>/SKILL.md` with frontmatter `name`, `description`, optional `allowed-tools`. Description should include trigger phrases the user is likely to say so the skill auto-surfaces.
+
+## `allowed-tools` is advisory, not a security boundary
+
+The `allowed-tools` frontmatter field (e.g. `allowed-tools: Read, Write, Edit, Glob, Grep`) documents which tools the skill is designed to use. Claude Code partially honors it as a nudge — but it is **not** a permission boundary or access control mechanism. A model still has access to any tool available in the session regardless of what `allowed-tools` says. Treat it as documentation of intent, not a constraint you can rely on for security.

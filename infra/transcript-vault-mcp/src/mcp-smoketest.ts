@@ -15,12 +15,21 @@ interface ToolResult {
 
 async function main() {
   // StdioClientTransport only inherits a hardcoded "safe" env list
-  // (HOME / PATH / SHELL / etc.). Forward the FathomMCP-specific vars
+  // (HOME / PATH / SHELL / etc.). Forward transcript-vault-mcp env vars
   // explicitly so the spawned server resolves the same data root as the
   // shell that launched the test — otherwise paths.ts falls back to the
-  // FathomMCP repo root and writes an empty corpus there.
+  // repo root and finds an empty corpus there.
   const forwardedEnv: Record<string, string> = {};
-  for (const key of ["FATHOM_DATA_ROOT", "FATHOM_API_KEY"]) {
+  for (const key of [
+    "VAULT_DATA_ROOT",
+    "RECORDER_ADAPTER",
+    "FATHOM_API_KEY",      // adapter-specific; harmless if absent
+    "FIREFLIES_API_KEY",
+    "OTTER_API_KEY",
+    "OTTER_EXPORT_DIR",
+    "GRANOLA_LOCAL_STORE",
+    "FATHOM_DATA_ROOT",    // legacy alias honored by paths.ts
+  ]) {
     const value = process.env[key];
     if (value) forwardedEnv[key] = value;
   }

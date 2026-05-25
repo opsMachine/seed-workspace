@@ -12,4 +12,6 @@ data/proposals.yml
 data/candidates/
 data/logs/
 data/.sync.lock
+vault/People/
+vault/Companies/
 vault/Meetings/
