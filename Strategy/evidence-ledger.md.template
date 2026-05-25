@@ -24,10 +24,31 @@ Without this, "lessons learned" just become permanent assumptions. With this, ev
 |---|---|---|
 | L1 | Pattern-match | Saw it once, looks suggestive |
 | L2 | Replicated | Same pattern in 2–3 distinct cases |
-| L3 | Predictive | Can predict outcomes from the pattern |
+| L3 | Predictive | Made a prediction from the pattern before an outcome; it held |
 | L4 | Sustained | Holds across many cases, across time, across contexts |
 
 A claim at L1 should be held loosely. A claim at L4 has earned the right to drive operating decisions.
+
+**Honest limitation:** this is a self-assessed system — you write the claims, the falsification criteria, and the level. That makes it better than most people do, and still subject to motivated reasoning. The discipline below is designed to make the self-assessment harder to game, but not immune to it. See the [level promotion criteria](#level-promotion-criteria) before advancing any claim.
+
+---
+
+## Level promotion criteria
+
+Advancing a level requires honest answers to these questions. If you can't answer them, stay at the current level.
+
+### L1 → L2
+- Name the second case specifically. What is the exact commonality — not the pattern you want to see, but what is observably the same in both?
+- Are the two cases genuinely distinct (different engagements, different buyers, different contexts), or are they the same situation seen twice?
+
+### L2 → L3
+- State a prediction you made *before* an outcome that confirmed the pattern, with a date and engagement. A retrospective "this explains what happened" does not qualify — that's still L2.
+- If you can't name a forward prediction that held, you have replicated observations but not predictive validity. Stay L2.
+
+### L3 → L4
+- How long has this held without a meaningful test failing? Name a case where you expected the pattern might break and it didn't.
+- Name a context or buyer type you haven't tested it in yet. That's your falsification surface — are you actively avoiding it?
+- Has enough time passed that market / positioning / buyer conditions could have shifted underneath the claim? If so, add a "still true as of YYYY-MM-DD" row before advancing.
 
 ---
 
@@ -37,6 +58,8 @@ A claim at L1 should be held loosely. A claim at L4 has earned the right to driv
 2. **Update on every cycle review** (Friday weekly review is the natural slot). Walk every claim; add new evidence rows; update levels; flag contradictions.
 3. **Contradictions are high-value.** A row marked `CONTRADICTS` is more important than five `SUPPORTS` rows. Surface them; don't hide them.
 4. **Retire claims** that get decisively contradicted. Move to the "Retired claims" section at the bottom with a one-line reason and date. Don't delete.
+5. **Write narrow falsification criteria.** The most common failure mode in self-assessed evidence systems is writing criteria that are technically falsifying but practically impossible to trigger — "three consecutive losses in a segment you're actively de-prioritizing." A useful criterion describes something that could actually happen in your operating reality in the next 90 days. If none of your criteria could realistically fire in the next quarter, they're too narrow.
+6. **Don't advance levels retrospectively.** L3 (predictive) requires a forward prediction made before an outcome. If you're looking back at what happened and finding the pattern — that's still L2, just with more cases. See the [level promotion criteria](#level-promotion-criteria).
 
 ---
 
@@ -53,8 +76,16 @@ Use this template, one per major claim:
 **Statement:** <one-sentence claim>
 
 **What would change it (falsification criteria):**
-- <criterion 1>
+- <criterion 1 — make it narrow enough to actually happen, not a bar so high it can never be met>
 - <criterion 2>
+
+**Untested contexts (your falsification surface):**
+- <where you haven't tested this yet — the honest answer to "where could you be wrong?">
+
+**Level promotion note:**
+- <if L2: name both cases and their exact commonality>
+- <if L3: name the forward prediction you made and which engagement confirmed it>
+- <if L4: name the last time you actively tested this and how long it has held>
 
 | Date       | Engagement / Source        | Direction      | Notes |
 |------------|----------------------------|----------------|-------|

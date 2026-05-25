@@ -32,6 +32,8 @@ This is the opposite:
 
 5. **Falsifiable beats confident.** Every strategic claim has an evidence row. The Evidence Ledger is the answer to *"how do you know this is still true?"* Without that mechanism, strategy drifts toward what feels right and decouples from operating reality. The capture-then-integrate lifecycle ([`Strategy/to integrate/`](Strategy/to%20integrate/) → approval-gated `integrate` skill → canonical) exists in service of this — see [`WORKFLOWS.md`](WORKFLOWS.md) for the mechanism.
 
+   One honest constraint: the Evidence Ledger is a *self-assessed* system. You write the claims, the falsification criteria, and the evidence levels. That's better than not tracking at all, and still subject to motivated reasoning — narrow falsification criteria, retrospective pattern-matching, and avoiding the contexts where a claim might fail are all failure modes a motivated person can execute in good faith. The level promotion criteria in the ledger template are designed to make this harder, not to eliminate it. Treat L1–L3 claims as working hypotheses; treat L4 claims as well-tested but not proven.
+
 6. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
 
 ## The central decision protocol: gain-analysis
