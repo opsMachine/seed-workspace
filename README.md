@@ -54,7 +54,7 @@ seed-workspace/
 
 **Stack:** TypeScript, SQLite + FTS5 (keyword search), [LanceDB](https://lancedb.github.io/lancedb/) + `@xenova/transformers` (local 384-dim embeddings — no OpenAI dependency), MCP stdio server, adapter interface for any recorder. Fathom is fully implemented; Fireflies/Otter/Granola ship as stubs.
 
-Originally built for Fathom specifically as [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP), then generalized so the extraction layer is swappable while everything else (transform, embed, search, MCP server, workflow prompts) stays recorder-agnostic.
+Originally built for Fathom specifically as [`opsMachine/FathomMCP`](https://github.com/opsMachine/FathomMCP), then generalized so the extraction layer is swappable while everything else (transform, embed, search, MCP server, workflow prompts) stays recorder-agnostic.
 
 → Full documentation: [`infra/transcript-vault-mcp/README.md`](infra/transcript-vault-mcp/README.md)  
 → Architecture deep-dive: [`infra/transcript-vault-mcp/ARCHITECTURE.md`](infra/transcript-vault-mcp/ARCHITECTURE.md)

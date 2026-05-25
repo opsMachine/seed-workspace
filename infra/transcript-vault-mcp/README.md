@@ -4,7 +4,7 @@ Local-first semantic search MCP built from your meeting recorder's data. Runs en
 
 ## Origin and motivation
 
-This started as [`MitchSchwartz/FathomMCP`](https://github.com/MitchSchwartz/FathomMCP) — a Fathom-specific tool built to answer a single frustration: the native Fathom UI can't search semantically across years of recordings, pull everything ever said about a company in one query, or verify a strategic claim against the corpus. Those are AI-native capabilities the recorder UI fundamentally won't build because they require a local index.
+This started as [`opsMachine/FathomMCP`](https://github.com/opsMachine/FathomMCP) — a Fathom-specific tool built to answer a single frustration: the native Fathom UI can't search semantically across years of recordings, pull everything ever said about a company in one query, or verify a strategic claim against the corpus. Those are AI-native capabilities the recorder UI fundamentally won't build because they require a local index.
 
 After using it, three design decisions became clear that led to this generalized version:
 1. The extraction layer (recorder API calls) should be swappable — everything else is recorder-agnostic
