@@ -1,21 +1,21 @@
 ---
-name: fathom-research
+name: transcript-research
 description: >-
-  Orchestrate deep research across Fathom meeting transcripts. Use when the user
-  asks to analyze client meetings, review sales calls, research a topic across
-  meetings, build client personas, export transcripts for RAG, or says 'fathom',
-  'meetings', 'transcripts', 'call review', 'client analysis'.
+  Orchestrate deep research across meeting transcripts in the local transcript
+  vault. Use when the user asks to analyze client meetings, review sales calls,
+  research a topic across meetings, build client personas, export transcripts for
+  RAG, or says 'meetings', 'transcripts', 'call review', 'client analysis'.
 ---
 
-<!-- Last updated: 2026-04-16 -->
+<!-- Last updated: 2026-05-25 -->
 
-# Fathom Meeting Research
+# Transcript Research
 
-Orchestrate multi-step research workflows over the local Fathom knowledge base (`fathom-kb` MCP server). The store is a SQLite + LanceDB index built from Fathom exports; all tools are read-only.
+Orchestrate multi-step research workflows over the local transcript knowledge base (`transcript-vault-kb` MCP server). The store is a SQLite + LanceDB index built from your recorder's exports; all tools are read-only.
 
 **The core risk of this skill is not missing data. It is producing confident synthesis from a single slice of retrieval.** The discipline sections below (Triangulation, Attribution, Temporal, Roleplay, Checkpoint) exist because the default failure mode is pattern-matching across meetings and silently dropping speaker, time, and source into a plausible-sounding narrative. Follow them.
 
-## Available MCP tools (`fathom-kb`)
+## Available MCP tools (`transcript-vault-kb`)
 
 | Tool | Purpose |
 |------|---------|

@@ -69,3 +69,7 @@ A few things the AI may need to do for you (just ask): create the `.cursor/skill
 ## IDE notes
 
 Default `.cursor/` folder works for Cursor + AntiGravity. For Windsurf, Claude Code, or others, see [`.cursor/README.md`](.cursor/README.md) — it's usually one symlink.
+
+## License
+
+MIT — see [LICENSE](LICENSE).

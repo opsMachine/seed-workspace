@@ -220,24 +220,24 @@ async function main() {
 
   try {
     const skillRes = await client.readResource({
-      uri: "skill://fathom-research",
+      uri: "skill://transcript-research",
     });
     const text =
       "text" in skillRes.contents[0]
         ? (skillRes.contents[0].text as string)
         : "";
     if (text.includes("Triangulation protocol") && text.includes("Attribution discipline")) {
-      console.log("PASS  resource:skill://fathom-research");
+      console.log("PASS  resource:skill://transcript-research");
       pass++;
     } else {
       console.log(
-        "FAIL  resource:skill://fathom-research -- expected Triangulation + Attribution sections"
+        "FAIL  resource:skill://transcript-research -- expected Triangulation + Attribution sections"
       );
       fail++;
     }
   } catch (err) {
     console.log(
-      `ERROR resource:skill://fathom-research -> ${(err as Error).message}`
+      `ERROR resource:skill://transcript-research -> ${(err as Error).message}`
     );
     fail++;
   }

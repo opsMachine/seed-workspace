@@ -27,7 +27,7 @@ const server = new McpServer({
 // connected client (Cursor, Claude Desktop, Claude Code) can fetch the
 // research methodology directly from the MCP without depending on
 // workspace-scoped IDE skills.
-const FATHOM_RESEARCH_SKILL_PATH = join(
+const TRANSCRIPT_RESEARCH_SKILL_PATH = join(
   import.meta.dirname,
   "..",
   "skills",
@@ -669,7 +669,7 @@ server.registerTool(
   {
     title: "Get Entity Timeline",
     description:
-      "Chronologically-ordered mentions of a person, company, project, or topic across meetings. Each entry has date, meeting_id, meeting_title, snippet, speakers (when known), and url. Use this instead of running semantic_search three times and trying to order the results — supports A1 (triangulation) and A3 (temporal resolution) from the fathom-research skill.",
+      "Chronologically-ordered mentions of a person, company, project, or topic across meetings. Each entry has date, meeting_id, meeting_title, snippet, speakers (when known), and url. Use this instead of running semantic_search three times and trying to order the results — supports A1 (triangulation) and A3 (temporal resolution) from the transcript-research skill.",
     inputSchema: {
       entity: z
         .string()
@@ -758,13 +758,13 @@ server.registerTool(
       claim: z
         .string()
         .describe(
-          "The claim to verify, phrased as a positive statement (e.g. 'Mitch wants to work with smaller companies')."
+          "The claim to verify, phrased as a positive statement (e.g. 'the user wants to work with smaller companies')."
         ),
       counter_claim: z
         .string()
         .optional()
         .describe(
-          "Optional negated form (e.g. 'Mitch wants to work with enterprise clients'). When provided, contradiction detection runs a second retrieval instead of relying on the negation heuristic — strongly preferred."
+          "Optional negated form (e.g. 'the user wants to work with enterprise clients'). When provided, contradiction detection runs a second retrieval instead of relying on the negation heuristic — strongly preferred."
         ),
       date_from: z.string().optional(),
       date_to: z.string().optional(),
@@ -1124,7 +1124,7 @@ ${UNKNOWN_SPEAKER_NOTE}`,
 // Resources
 // ---------------------------------------------------------------------------
 
-// The fathom-research methodology as an MCP resource. Read on each request so
+// The transcript-research methodology as an MCP resource. Read on each request so
 // edits to SKILL.md are picked up without restarting the server. The trigger
 // language in the description mirrors the skill's frontmatter so MCP clients
 // that surface resources to the model can match on the same cues that
@@ -1139,7 +1139,7 @@ server.registerResource(
     mimeType: "text/markdown",
   },
   async (uri) => {
-    const text = readFileSync(FATHOM_RESEARCH_SKILL_PATH, "utf-8");
+    const text = readFileSync(TRANSCRIPT_RESEARCH_SKILL_PATH, "utf-8");
     return {
       contents: [
         {
