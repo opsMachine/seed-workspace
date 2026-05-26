@@ -18,9 +18,9 @@ The methodology is in [`PHILOSOPHY.md`](PHILOSOPHY.md). The four loops are in [`
                                        ask the AI to run gain-analysis on it
 
 3. Security baseline               →  see infra/security/README.md:
-                                       OneCLI (https://github.com/onecli/onecli) for keys,
-                                       ./scripts/secret-scan.sh (gitleaks); optional:
+                                       install pre-commit hook first:
                                        ./scripts/install-git-hooks.sh
+                                       OneCLI (https://github.com/onecli/onecli) for keys
 
 4. Wire the MCPs you decided on    →  placeholders only in mcp.json (real keys in OneCLI),
                                        copy .cursor/mcp.json.template, restart IDE

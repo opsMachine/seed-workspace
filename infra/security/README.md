@@ -13,19 +13,23 @@ Philosophy: [`PHILOSOPHY.md`](../../PHILOSOPHY.md) (Credential security).
 
 ## 1. Gitleaks (secret scan)
 
-### CI
-
-Every push/PR to `main` runs [`.github/workflows/secret-scan.yml`](../../.github/workflows/secret-scan.yml) via [gitleaks-action](https://github.com/gitleaks/gitleaks-action).
-
-### Local
+### Recommended: pre-commit hook (catches secrets before they ever reach GitHub)
 
 ```bash
-# One-off full-history scan
-./scripts/secret-scan.sh
-
-# Optional: block commits that introduce secrets
 ./scripts/install-git-hooks.sh
 ```
+
+This points `core.hooksPath` at `.githooks/` — the pre-commit hook runs `scripts/secret-scan.sh` on every `git commit`. Skip for a single commit with `git commit --no-verify`.
+
+### One-off scan
+
+```bash
+./scripts/secret-scan.sh
+```
+
+### CI (backstop)
+
+[`.github/workflows/secret-scan.yml`](../../.github/workflows/secret-scan.yml) runs on push/PR as a secondary safety net — catches anything that slips past a missing or bypassed hook.
 
 Config: [`.gitleaks.toml`](../../.gitleaks.toml) (extends default rules; allowlists seed templates and `<<EDIT>>` placeholders).
 
