@@ -50,7 +50,7 @@ MCP wiring, `.env` files, and chat sessions are all places an AI agent can *read
 
 Local-only subprocesses (e.g. `npm run extract` for transcript-vault) may still read a gitignored `.env` on disk — that's acceptable when only *you* run the command, not the agent in a broad file search. When the agent might see env or MCP config, use OneCLI or equivalent instead.
 
-See [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) (Security) and [`AGENTS.md`](AGENTS.md.template) (Credential handling).
+See [`infra/security/README.md`](infra/security/README.md), [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) (Security), and [`AGENTS.md`](AGENTS.md.template) (Credential handling).
 
 ## The central decision protocol: gain-analysis
 

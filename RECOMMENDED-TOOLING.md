@@ -6,9 +6,13 @@ If you're technical and your AI is sitting in your IDE, you don't need install i
 
 ## IDE plugins (per editor)
 
-- **Excalidraw** — open `.excalidraw` files inline; useful if visual mapping is part of how you think. (`pomdtr.excalidraw-editor` for VS Code / Cursor.)
-- **Mermaid preview** — renders the Mermaid diagrams in `WORKFLOWS.md` and similar docs.
-- **YAML schema** + **markdownlint** — keeps `labels.yml`, `.skill-config.yml`, and the long-form markdown clean.
+The following plugins are **already installed in this workspace** (Cursor / VS Code):
+
+- **[Excalidraw Editor](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)** (`pomdtr.excalidraw-editor`) — open, create, and edit `.excalidraw` diagrams inline. The AI can also read and write `.excalidraw` files directly — useful for visual strategy mapping, architecture diagrams, and pyramid maps. The [`excalidraw-pyramid-parser`](.claude/skills/excalidraw-pyramid-parser/SKILL.md) skill is purpose-built for iterative refinement of these.
+- **[PDF Viewer](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf)** (`tomoki1207.pdf`) — render PDFs inline without leaving the IDE; useful when research, contracts, or reference material lives as PDFs alongside your workspace.
+- **[Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)** (`shd101wyy.markdown-preview-enhanced`) — live-rendered markdown with Mermaid, math, and diagram support. Renders `WORKFLOWS.md` and long-form strategy docs cleanly.
+- **[Omni Viewer](https://marketplace.visualstudio.com/items?itemName=battlecook.omni-viewer)** (`battlecook.omni-viewer`) — preview Word (`.docx`), Excel, PowerPoint, PDF, images, audio, video, CSV, YAML, Mermaid, PlantUML, and more — all inline. The Swiss Army knife for non-code file types.
+- **[Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)** (`yzhang.markdown-all-in-one`) — keyboard shortcuts, auto-formatting, table of contents, and math support for markdown editing.
 
 The seed is **infinitely extensible** by design — when you find another plugin or extension that meaningfully amplifies how you work, add it. There's no fixed shape.
 
@@ -22,7 +26,9 @@ The seed is **infinitely extensible** by design — when you find another plugin
 
 Run gain-analysis before adding it — but for any multi-MCP workspace, the marginal gain over "keys in mcp.json" is large: one rotation surface, no secrets in git, no accidental paste into chat.
 
-**Minimum bar without OneCLI:** keep all real keys in gitignored `.env` only; never put them in `mcp.json`; never commit `.env`; run the onboarding grep for `API_KEY=` before making a fork public. That is necessary but not sufficient when the agent routinely reads env-backed MCP config.
+**Minimum bar without OneCLI:** keep all real keys in gitignored `.env` only; never put them in `mcp.json`; never commit `.env`.
+
+**Shipped in this repo:** [`infra/security/README.md`](infra/security/README.md) — install steps, host table for OneCLI, and [`scripts/secret-scan.sh`](scripts/secret-scan.sh) + [gitleaks CI](.github/workflows/secret-scan.yml) for git history. Run `./scripts/secret-scan.sh` before making a fork public.
 
 ## MCPs
 
@@ -36,6 +42,8 @@ Run gain-analysis before adding it — but for any multi-MCP workspace, the marg
 
 ## Host-level helpers
 
+- **gitleaks** + optional git hooks — [`scripts/secret-scan.sh`](scripts/secret-scan.sh), [`scripts/install-git-hooks.sh`](scripts/install-git-hooks.sh); CI in [`.github/workflows/secret-scan.yml`](.github/workflows/secret-scan.yml). See [`infra/security/README.md`](infra/security/README.md).
+- **OneCLI** — local credential gateway; see [`infra/security/README.md`](infra/security/README.md).
 - **Drive File Stream** (macOS / Windows) or **rclone mount** (Linux) — for the symlink-Drive-as-local pattern.
 - **systemd / launchd / cron** — for nightly transcript syncs or any scheduled job you want.
 - **gh** (GitHub CLI) — for spinning up new client repos as siblings.

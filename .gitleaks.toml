@@ -1,0 +1,30 @@
+# Gitleaks config for seed-workspace forks.
+# https://github.com/gitleaks/gitleaks
+
+title = "seed-workspace gitleaks"
+
+[extend]
+# Keep upstream rules; add allowlists below for templates and docs.
+useDefault = true
+
+[[allowlists]]
+description = "seed templates, examples, and docs with intentional placeholders"
+paths = [
+  '''(?i)\.env\.example$''',
+  '''(?i)mcp\.json\.template$''',
+  '''\.template$''',
+  '''(?i)PROJECTS\.md\.template$''',
+  '''(?i)RECOMMENDED-TOOLING\.md$''',
+  '''(?i)PHILOSOPHY\.md$''',
+  '''(?i)infra/security/''',
+]
+regexes = [
+  '''<<EDIT[^>]*>>''',
+  '''FATHOM_API_KEY=\s*$''',
+  '''FATHOM_API_KEY=\.\.\.''',
+  '''# export FATHOM_API_KEY''',
+  '''placeholder only''',
+  '''NEVER commit''',
+  '''FAKE_KEY''',
+  '''gitleaks:allow''',
+]

@@ -17,19 +17,22 @@ The methodology is in [`PHILOSOPHY.md`](PHILOSOPHY.md). The four loops are in [`
 2. Review Setup-Decisions.md       →  for any row marked needs-gain-analysis,
                                        ask the AI to run gain-analysis on it
 
-3. Wire the MCPs you decided on    →  set up credential gateway first (recommended:
-                                       OneCLI — https://github.com/onecli/onecli),
-                                       then copy .cursor/mcp.json.template to mcp.json
-                                       using placeholders only, restart IDE
+3. Security baseline               →  see infra/security/README.md:
+                                       OneCLI (https://github.com/onecli/onecli) for keys,
+                                       ./scripts/secret-scan.sh (gitleaks); optional:
+                                       ./scripts/install-git-hooks.sh
 
-4. Draft (or symlink) the docs     →  Default: symlink existing files from Drive/Notion
+4. Wire the MCPs you decided on    →  placeholders only in mcp.json (real keys in OneCLI),
+                                       copy .cursor/mcp.json.template, restart IDE
+
+5. Draft (or symlink) the docs     →  Default: symlink existing files from Drive/Notion
    you actually need                  if you have them. Only fill templates when
                                        you're starting blank.
 
-5. Install ONE cadence             →  ask: "scaffold the keystone weekly review"
+6. Install ONE cadence             →  ask: "scaffold the keystone weekly review"
    (the keystone)                     (invokes scaffold-cadence skill)
 
-6. Live in it                      →  capture via harvest-learnings as engagements
+7. Live in it                      →  capture via harvest-learnings as engagements
                                        produce learnings; integrate when corroborated;
                                        Friday review keeps everything honest.
 ```
@@ -52,7 +55,7 @@ That's it. Everything below is detail you can revisit when you need it.
 - *"What should I do next?"* → ask the AI to read this checklist + `Setup-Decisions.md` and suggest 1–2 candidates
 - *"Should I build X?"* → ask the AI to run `gain-analysis` on X
 - *"How do I install Drive File Stream / rclone / a new MCP / a systemd timer?"* → ask the AI; it knows
-- *"Did anything sensitive end up in this fork?"* → ask the AI to grep for `API_KEY=`, `Bearer `, `.env`, and personally-named files; one-shot check, no script needed
+- *"Did anything sensitive end up in this fork?"* → run `./scripts/secret-scan.sh` and confirm `.env` / `mcp.json` are not tracked (`git ls-files`)
 
 ## Healthy operating signals
 

@@ -36,9 +36,15 @@ seed-workspace/
 ├── personal/                   ← symlinks to non-client personal projects
 │
 ├── infra/
+│   ├── security/               ← gitleaks + OneCLI setup for this workspace
 │   ├── transcript-vault-mcp/   ← optional substrate: local meeting KB, recorder-agnostic
 │   └── drive-symlinks/         ← convention for surfacing Drive content as local files
 │
+├── scripts/
+│   ├── secret-scan.sh          ← local gitleaks (full history)
+│   └── install-git-hooks.sh    ← optional pre-commit secret scan
+├── .gitleaks.toml              ← gitleaks config (CI + local)
+├── .github/workflows/          ← secret-scan.yml on push/PR
 ├── .cursor/mcp.json.template   ← MCP wiring template
 └── .claude/skills/             ← the seed's skills
 ```
@@ -91,6 +97,8 @@ A few things the AI may need to do for you (just ask): create the `.cursor/skill
 ## IDE notes
 
 Default `.cursor/` folder works for Cursor + AntiGravity. For Windsurf, Claude Code, or others, see [`.cursor/README.md`](.cursor/README.md) — it's usually one symlink.
+
+**Recommended plugins** (all available in this workspace): Excalidraw editor, PDF Previewer, Markdown Preview Enhanced, and Word Document Viewer — see [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) for extension IDs. The AI can also read, create, and edit `.excalidraw` files directly; the [`excalidraw-pyramid-parser`](.claude/skills/excalidraw-pyramid-parser/SKILL.md) skill handles iterative strategy diagram refinement.
 
 ## License
 

@@ -6,7 +6,7 @@
   "mcpServers": {
 
     "transcript-vault": {
-      "_when_to_enable": "When you've decided to run a local transcript index (see Setup-Decisions.md). Requires npm install + a working adapter in infra/transcript-vault-mcp/adapters/.",
+      "_when_to_enable": "When you've decided to run a local transcript index (see Setup-Decisions.md). Requires npm install + a working adapter in infra/transcript-vault-mcp/adapters/. No Fathom API key here — local index only.",
       "command": "npx",
       "args": [
         "-y",
@@ -14,8 +14,27 @@
         "<<EDIT: absolute path>>/seed-workspace/infra/transcript-vault-mcp/src/mcp-server.ts"
       ],
       "env": {
-        "VAULT_DATA_ROOT": "<<EDIT: absolute path>>/seed-workspace/vault",
+        "VAULT_DATA_ROOT": "<<EDIT: absolute path to corpus, e.g. .../OM-Repo/fathom-vault>>",
         "RECORDER_ADAPTER": "fathom"
+      }
+    },
+
+    "fathom": {
+      "_when_to_enable": "Live Fathom cloud MCP (meetings API). Route through OneCLI; real key in vault under name matching placeholder below.",
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://api.fathom.ai/mcp",
+        "--enable-proxy"
+      ],
+      "env": {
+        "HTTP_PROXY": "http://127.0.0.1:10255",
+        "HTTPS_PROXY": "http://127.0.0.1:10255",
+        "NO_PROXY": "localhost,127.0.0.1",
+        "FATHOM_API_KEY": "<<EDIT: OneCLI placeholder, e.g. Fathom>>",
+        "X-Api-Key": "<<EDIT: same placeholder as FATHOM_API_KEY>>",
+        "ONECLI_AGENT_ACCESS_TOKEN": "<<EDIT: OneCLI agent access token>>"
       }
     },
 
