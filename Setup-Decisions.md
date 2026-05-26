@@ -27,6 +27,7 @@ For each row:
 | Drive / docs | <<EDIT: e.g. Drive / Dropbox / Notion / scattered>> | needs-gain-analysis | <<EDIT: e.g. "Drive File Stream installed — symlink path is high-leverage.">> |
 | Strategy / self-knowledge docs | <<EDIT: e.g. nothing yet / scattered in Drive / on a Notion page>> | port-templates / symlink-existing | <<EDIT: e.g. "Existing positioning doc in Drive — will symlink and adapt rather than recreate.">> |
 | Cadences | <<EDIT: e.g. weekly review already exists / nothing>> | install keystone weekly review / already-have-one / deferred | <<EDIT>> |
+| API credential gateway | <<EDIT: e.g. none / keys in .env only / OneCLI>> | install OneCLI / env-only / deferred | <<EDIT: e.g. "OneCLI for MCP keys — agents never read mcp.json secrets.">> |
 
 ---
 

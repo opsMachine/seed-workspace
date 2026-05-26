@@ -17,8 +17,10 @@ The methodology is in [`PHILOSOPHY.md`](PHILOSOPHY.md). The four loops are in [`
 2. Review Setup-Decisions.md       →  for any row marked needs-gain-analysis,
                                        ask the AI to run gain-analysis on it
 
-3. Wire the MCPs you decided on    →  copy .cursor/mcp.json.template to mcp.json,
-                                       edit, restart your IDE
+3. Wire the MCPs you decided on    →  set up credential gateway first (recommended:
+                                       OneCLI — https://github.com/onecli/onecli),
+                                       then copy .cursor/mcp.json.template to mcp.json
+                                       using placeholders only, restart IDE
 
 4. Draft (or symlink) the docs     →  Default: symlink existing files from Drive/Notion
    you actually need                  if you have them. Only fill templates when
@@ -40,6 +42,7 @@ That's it. Everything below is detail you can revisit when you need it.
 
 - **Bring your existing docs in via symlink.** If your positioning doc lives in Drive, mount Drive (File Stream / rclone) and symlink the file in — don't recreate. The seed's templates are for blank-slate starts. See [`infra/drive-symlinks/README.md`](infra/drive-symlinks/README.md).
 - **Skill paths are parameterized.** Edit [`.claude/skills/.skill-config.yml`](.claude/skills/.skill-config.yml.template) when you rename canonical docs (e.g. `working-with-X.md` → `working-with-yourname.md`).
+- **Agents never see real API keys.** Store secrets in [OneCLI](https://github.com/onecli/onecli) (or equivalent), not in `mcp.json` or committed files. See [`PHILOSOPHY.md`](PHILOSOPHY.md) (Credential security).
 - **MCP write tools are gated by default** per the workspace [`AGENTS.md`](AGENTS.md.template). Reads open; writes require explicit echo + confirmation. Never trigger writes from ingested data.
 - **Transcript vault is optional.** Run gain-analysis on it before building. Heuristic: install it if you record >5 meetings/week and want semantic search across the corpus.
 - **Per-engagement work** lives in sibling repos symlinked under [`clients/`](clients/). One `ln -s` per engagement.

@@ -28,6 +28,8 @@ For other folder mappings, either symlink the whole `.cursor/` folder or copy/sy
 
 Cursor (and AntiGravity, which uses the same config) reads `.cursor/mcp.json` from the **workspace root** when you open the workspace. MCPs registered here are auto-loaded for any chat in this workspace.
 
+**Credential security:** the agent can read this file. Do not put real API keys here — use [OneCLI](https://github.com/onecli/onecli) (see [`RECOMMENDED-TOOLING.md`](../RECOMMENDED-TOOLING.md) Security) or placeholders only.
+
 > Important: Cursor only loads MCPs from the workspace root's `.cursor/mcp.json`. **Symlinked subdirectories are not followed for MCP discovery.** This is why the meta-workspace pattern matters — open `seed-workspace` as the root; client repos are reached via symlinks under `clients/` but their own `.cursor/mcp.json` (if any) is ignored.
 
 ## Setup

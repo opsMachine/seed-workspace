@@ -13,6 +13,7 @@ A bespoke AI cowork space that **augments live systems-of-record** (Drive, CRM, 
 - **Prefer reading from local files** that live in this workspace over re-querying APIs the user already has set up.
 - **Don't suggest building parallel local copies** of things the live system handles well (versioning of Drive docs, CRM state, calendar truth) — surface them via symlink / MCP and let the source own its job.
 - **The interface enhancements that ARE local here** (transcript-vault, the strategy layer, the Evidence Ledger) exist because they let cross-system synthesis happen — use them as your composition layer.
+- **Never surface real API keys.** Do not ask the user to paste keys into chat, strategy docs, or committed files. If MCP or tooling needs credentials, assume they are stored in a gateway ([OneCLI](https://github.com/onecli/onecli) is the recommended pattern for this workspace) or a gitignored `.env` the user runs manually — not in values you can read from `mcp.json` or the repo.
 
 ## Read first
 
@@ -23,6 +24,19 @@ If you're a fresh AI session in this workspace:
 3. [`Strategy/evidence-ledger.md`](Strategy/evidence-ledger.md) — to see which claims have what level of evidence
 4. [`Context/self-profile.md`](Context/self-profile.md) — cognitive defaults and blind spots
 5. [`README.md`](README.md) — orientation across the repo
+
+---
+
+## Credential handling (default)
+
+This workspace assumes **agents do not hold real API keys.**
+
+1. **Do not** read, echo, or suggest storing real secrets in tracked files, `mcp.json`, or chat.
+2. **Do not** grep the repo for live `.env` or `mcp.json` contents looking for keys unless the user explicitly asks for a security audit — and then report findings without repeating secret values.
+3. When the user wires a new MCP, point them to [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) (Security) and [OneCLI](https://github.com/onecli/onecli): store real credentials in the gateway; use placeholders in IDE MCP config; route outbound API traffic through the proxy where supported.
+4. Subprocesses the *user* runs locally (e.g. `npm run extract`) may use a gitignored `.env` — that is fine. Do not copy those values into any file the agent might edit or commit.
+
+<<EDIT: if using OneCLI, note your dashboard URL, agent token names, and which MCPs are registered behind the gateway — without pasting real key values.>>
 
 ---
 

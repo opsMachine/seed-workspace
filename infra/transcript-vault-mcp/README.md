@@ -77,6 +77,8 @@ data/candidates/*.md         (gitignored, npm run prep:people / prep:calls)
 
 ## Setup
 
+**API keys:** adapter keys in `.env` are gitignored but still on disk. For workspace-wide discipline (especially when the AI can grep the repo), prefer storing recorder/API credentials in [OneCLI](https://github.com/onecli/onecli) and using this `.env` only for manual `npm run extract` you invoke yourself. See the seed's [`PHILOSOPHY.md`](../../PHILOSOPHY.md) (Credential security).
+
 ```bash
 cd infra/transcript-vault-mcp
 

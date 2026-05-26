@@ -12,6 +12,18 @@ If you're technical and your AI is sitting in your IDE, you don't need install i
 
 The seed is **infinitely extensible** by design — when you find another plugin or extension that meaningfully amplifies how you work, add it. There's no fixed shape.
 
+## Security (credential gateway)
+
+**Problem:** every MCP you enable wants an API key. If that key lives in `.cursor/mcp.json` or a file in the workspace, the AI agent can read it — in config search, grep, or a mistaken commit.
+
+**Stance:** agents never see real secrets. Real keys live outside the workspace surface the agent searches.
+
+**Recommended:** [**OneCLI**](https://github.com/onecli/onecli) — open-source credential gateway with a built-in encrypted vault ([onecli.sh](https://onecli.sh)). Store credentials once in OneCLI; give each agent a scoped access token and placeholder keys (e.g. `FAKE_KEY`). HTTP traffic routed through the OneCLI gateway (default `localhost:10255`) gets real auth injected at request time. The dashboard (`localhost:10254`) manages agents, secrets, and host/path matching.
+
+Run gain-analysis before adding it — but for any multi-MCP workspace, the marginal gain over "keys in mcp.json" is large: one rotation surface, no secrets in git, no accidental paste into chat.
+
+**Minimum bar without OneCLI:** keep all real keys in gitignored `.env` only; never put them in `mcp.json`; never commit `.env`; run the onboarding grep for `API_KEY=` before making a fork public. That is necessary but not sufficient when the agent routinely reads env-backed MCP config.
+
 ## MCPs
 
 > Decide via [`discover-stack`](.claude/skills/discover-stack/SKILL.md) and [`gain-analysis`](.claude/skills/gain-analysis/SKILL.md) before adding anything to `.cursor/mcp.json`.

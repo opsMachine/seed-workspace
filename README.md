@@ -9,7 +9,9 @@ A bespoke AI cowork space for one person operating at high context complexity. T
 1. [`PHILOSOPHY.md`](PHILOSOPHY.md) — what this is and why
 2. [`WORKFLOWS.md`](WORKFLOWS.md) — the four feedback loops
 3. [`OnboardingChecklist.md`](OnboardingChecklist.md) — one-screen adoption guide
-4. [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) — short menu of things that pair well
+4. [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) — short menu of things that pair well (includes [OneCLI](https://github.com/onecli/onecli) for API key protection)
+
+**Security baked in:** real API keys do not belong in files the AI reads (`mcp.json`, committed config, chat). Store them in a [credential gateway](https://github.com/onecli/onecli) (recommended: [OneCLI](https://github.com/onecli/onecli)); agents use placeholders or proxy-routed access. See [`PHILOSOPHY.md`](PHILOSOPHY.md) (Credential security) and [`AGENTS.md.template`](AGENTS.md.template).
 
 ---
 

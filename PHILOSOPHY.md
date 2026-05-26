@@ -36,6 +36,22 @@ This is the opposite:
 
 6. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
 
+## Credential security: agents never see real keys
+
+MCP wiring, `.env` files, and chat sessions are all places an AI agent can *read* configuration. Treat **real API keys as out-of-band** from anything the agent touches in this workspace.
+
+**Default stance:**
+
+- **Never commit** secrets — `.env`, `.cursor/mcp.json`, and live config files are gitignored; templates ship empty placeholders only.
+- **Never paste** real keys into chat, canonical docs, or client repos the agent can search.
+- **Prefer a credential gateway** when you run multiple MCPs or agents: store real keys once; agents use placeholders or proxy-routed calls. The agent makes normal HTTP/MCP requests; the gateway injects auth.
+
+**Recommended:** [OneCLI](https://github.com/onecli/onecli) — open-source credential gateway with an encrypted vault. You store credentials in OneCLI; agents get scoped access tokens and placeholder keys. Outbound requests through the gateway swap placeholders for real secrets at request time. Fits the same philosophy as write-tool gating: *the agent operates; it does not hold the keys.*
+
+Local-only subprocesses (e.g. `npm run extract` for transcript-vault) may still read a gitignored `.env` on disk — that's acceptable when only *you* run the command, not the agent in a broad file search. When the agent might see env or MCP config, use OneCLI or equivalent instead.
+
+See [`RECOMMENDED-TOOLING.md`](RECOMMENDED-TOOLING.md) (Security) and [`AGENTS.md`](AGENTS.md.template) (Credential handling).
+
 ## The central decision protocol: gain-analysis
 
 Principle 2 (delegate to systems-of-record) is the *stance*. Gain-analysis is how you make it operational. Most "should I build this?" questions can be answered with one lens:
@@ -68,4 +84,4 @@ The methodology is more important than any specific implementation. The seed is 
 
 What survives across implementations is the philosophy:
 
-> *Local files beat connected systems where they can. Delegate to systems-of-record where they can't — and add only the interface enhancements that make AI work usefully better over them. The AI is your cross-system interface. Curate and connect, don't just store. Falsifiable beats confident. Cadence beats discipline. Ask "what's the gain?" before building anything new. Extend without bound.*
+> *Local files beat connected systems where they can. Delegate to systems-of-record where they can't — and add only the interface enhancements that make AI work usefully better over them. The AI is your cross-system interface. Agents never hold real API keys — store secrets in a gateway, not in MCP config the agent can read. Curate and connect, don't just store. Falsifiable beats confident. Cadence beats discipline. Ask "what's the gain?" before building anything new. Extend without bound.*

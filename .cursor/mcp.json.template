@@ -1,6 +1,7 @@
 {
   "_README": "Copy to mcp.json (drop .template), then EDIT every absolute path and env var. The seed ships placeholders; nothing here will work until you replace <<...>> markers. Restart Cursor / AntiGravity after edits.",
   "_decision_protocol": "Before enabling each MCP below, run the gain-analysis skill — does this give you something your live system doesn't already? If not, leave it disabled.",
+  "_credentials": "NEVER put real API keys in this file — the AI agent can read it. Recommended: store secrets in OneCLI (https://github.com/onecli/onecli) and use placeholder keys or proxy-routed HTTP (gateway default localhost:10255). See RECOMMENDED-TOOLING.md (Security) and PHILOSOPHY.md (Credential security). Real keys belong in OneCLI or a gitignored .env for manual CLI only — not here.",
 
   "mcpServers": {
 
@@ -24,7 +25,7 @@
       "command": "<<EDIT: hubspot-mcp command>>",
       "args": ["<<EDIT>>"],
       "env": {
-        "HUBSPOT_API_KEY": "<<EDIT: from .env or env, NEVER commit>>"
+        "HUBSPOT_API_KEY": "<<EDIT: placeholder only — real key in OneCLI vault, NEVER commit>>"
       }
     },
 

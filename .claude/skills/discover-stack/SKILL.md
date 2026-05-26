@@ -48,7 +48,7 @@ If `Setup-Decisions.md` already has rows filled in, this is an **update pass** �
 
 ## Step 2: Interview, one ability at a time
 
-Walk through the 8 abilities in this order. **Ask one focused question per ability.** Don't bundle. After each answer, write the row immediately so the matrix builds incrementally.
+Walk through the 9 abilities in this order. **Ask one focused question per ability.** Don't bundle. After each answer, write the row immediately so the matrix builds incrementally.
 
 If the user answers "skip" or "later", write `decision: deferred` and move on. Never block.
 
@@ -90,6 +90,11 @@ If the user answers "skip" or "later", write `decision: deferred` and move on. N
    - If yes: capture them; the keystone may already exist
    - If no: name "weekly review" as the keystone candidate; don't push install yet
 
+9. **API credential gateway** — *"Where do API keys for MCPs live today — in mcp.json, a .env file, a password manager, or nowhere yet?"*
+   - If multiple MCPs or the agent can read config → recommend [OneCLI](https://github.com/onecli/onecli) (`install` or `deferred`); agents use placeholders, gateway injects real keys
+   - If keys only in gitignored `.env` for manual CLI → note `env-only` and the risk if the agent greps env
+   - Never recommend putting real keys in `mcp.json` or committed files
+
 ## Step 3: For any unsure answer — defer to gain-analysis
 
 If the user can't decide on an ability ("hmm, not sure if I need a local CRM index"), don't push. Write `decision: needs-gain-analysis` and tell them: *"We can run the [`gain-analysis`](../gain-analysis/SKILL.md) skill on that one specifically when you want — it walks the build/skip lens."*
@@ -115,6 +120,7 @@ Use this structure (preserving any existing rows + their `decision` and `notes`)
 | Drive / docs | <system> | symlinks / symlinks + indexed / mcp / skip / deferred | <freeform> |
 | Strategy docs | <existing or "drafting from scratch"> | port-templates / symlink-existing-then-adapt / hybrid | <freeform> |
 | Cadences | <existing> | install keystone weekly review / already have one / deferred | <freeform> |
+| API credential gateway | <none / .env / OneCLI / other> | install OneCLI / env-only / deferred / needs-gain-analysis | <freeform> |
 ```
 
 Plus a `## Notes` section under the table for anything else surfaced.
