@@ -20,21 +20,14 @@
     },
 
     "fathom": {
-      "_when_to_enable": "Live Fathom cloud MCP (meetings API). Route through OneCLI; real key in vault under name matching placeholder below.",
-      "command": "npx",
-      "args": [
-        "-y",
-        "mcp-remote@latest",
-        "https://api.fathom.ai/mcp",
-        "--enable-proxy"
-      ],
+      "_when_to_enable": "Live Fathom cloud MCP (meetings API). Requires OneCLI running on :10255 with a secret named 'Fathom' for host api.fathom.ai. See infra/security/README.md.",
+      "_setup": "Real key lives in OneCLI vault (placeholder 'Fathom'). Script reads ONECLI_AGENT_ACCESS_TOKEN and routes traffic through gateway.",
+      "command": "<<EDIT: absolute path>>/seed-workspace/scripts/mcp-fathom-via-onecli.sh",
+      "args": [],
       "env": {
-        "HTTP_PROXY": "http://127.0.0.1:10255",
-        "HTTPS_PROXY": "http://127.0.0.1:10255",
-        "NO_PROXY": "localhost,127.0.0.1",
-        "FATHOM_API_KEY": "<<EDIT: OneCLI placeholder, e.g. Fathom>>",
-        "X-Api-Key": "<<EDIT: same placeholder as FATHOM_API_KEY>>",
-        "ONECLI_AGENT_ACCESS_TOKEN": "<<EDIT: OneCLI agent access token>>"
+        "FATHOM_API_KEY": "Fathom",
+        "ONECLI_AGENT_ACCESS_TOKEN": "<<EDIT: OneCLI agent access token from dashboard>>",
+        "ONECLI_GATEWAY": "http://127.0.0.1:10255"
       }
     },
 
@@ -54,7 +47,7 @@
       "command": "<<EDIT: clickup-mcp command>>",
       "args": ["<<EDIT>>"],
       "env": {
-        "CLICKUP_API_KEY": "<<EDIT>>"
+        "CLICKUP_API_KEY": "<<EDIT: placeholder only — real key in OneCLI vault, NEVER commit>>"
       }
     },
 
