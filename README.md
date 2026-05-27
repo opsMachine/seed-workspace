@@ -4,6 +4,27 @@ A bespoke AI cowork space for one person operating at high context complexity. T
 
 > **The best version found so far of having all the knowledge, context, and tools in one place.** Not a productized template. Not a wizard. A methodology + a folder structure with intent + a few skills + an optional substrate. You shape the rest.
 
+## What you can do in a session
+
+This workspace is designed for **human-in-the-loop leverage** — not background automation. You direct; the AI synthesizes across systems at a speed no human-only workflow matches.
+
+Tasks that used to take an hour:
+
+- **Pre-call prep:** pull the full conversation history with a person or company, brief yourself, surface open threads — before you join
+- **Project context update:** take recent transcripts, extract action items and discussion points, drop them into a spec or context file
+- **CRM update:** log a call or email chain with full notes — in seconds, with everything visible for review before it's written
+- **Email with full context:** draft a reply while pulling the entire relationship history into scope
+- **Sales coaching:** review a series of conversations for patterns, objections, and moments worth studying
+- **Cross-system report:** pull from transcripts + CRM + calendar + drive, synthesize, save as a working file
+
+All of them are fast and trustworthy *with* you — because you direct the synthesis and catch the edge cases.
+
+**Work isn't ephemeral.** The failure mode of inline chat is that the best thinking lives in a conversation window and evaporates. Here, useful outputs get captured as files, promoted to project contexts, or integrated into canonical docs via an explicit approval step. The AI's work product persists.
+
+**Any task can become a skill. Any project can carry its own `AGENTS.md`.** When you find yourself describing the same workflow twice, that's a skill waiting to be written. The extension mechanism is structural — same architecture as the seed itself.
+
+---
+
 **Read in order:**
 
 1. [`PHILOSOPHY.md`](PHILOSOPHY.md) — what this is and why

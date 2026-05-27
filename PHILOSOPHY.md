@@ -36,6 +36,16 @@ This is the opposite:
 
 6. **Cadence beats one-off discipline.** A short, durable weekly review beats a beautiful one-off planning session every time. The container layer exists because strategy without an operating layer becomes doc-in-drawer.
 
+## The operating model: leverage at your fingertips
+
+The seed is designed for **human-in-the-loop leverage**, not background automation.
+
+Fully autonomous AI that pulls the right context, synthesizes correctly, and acts without prompting is genuinely hard to build — and even harder to trust. The user in the loop is not a limitation; it is the design. You direct; the AI executes and synthesizes at a speed no human-only workflow matches. The concrete examples of what this enables live in the README.
+
+**Work isn't ephemeral.** The failure mode of inline chat is that the best thinking lives in a conversation window and evaporates. The seed solves this structurally: every useful output gets captured as a file, promoted to a project context, or integrated into canonical docs via an explicit approval step. The AI's work product persists across sessions.
+
+**Any task can become a skill.** When you find yourself describing the same workflow more than twice, that's a skill waiting to be written. Any project can carry its own `AGENTS.md` with specific behaviors, tool constraints, and context pointers. The extension mechanism is structural — the same architecture that runs the seed runs your custom additions without friction.
+
 ## Credential security: agents never see real keys
 
 MCP wiring, `.env` files, and chat sessions are all places an AI agent can *read* configuration. Treat **real API keys as out-of-band** from anything the agent touches in this workspace.
