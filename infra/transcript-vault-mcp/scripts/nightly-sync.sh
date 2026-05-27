@@ -61,6 +61,22 @@ run_step() {
 
 echo "[$(ts)] === transcript-vault nightly sync starting (adapter=${RECORDER_ADAPTER:-fathom}, node=$(node --version 2>/dev/null || echo missing)) ==="
 
+# OneCLI proxy — optional. If ONECLI_AGENT_ACCESS_TOKEN is set, source the proxy
+# env so Node routes through the gateway for key injection. If not set, extract
+# runs directly using FATHOM_API_KEY (or equivalent) from .env.
+if [ -n "${ONECLI_AGENT_ACCESS_TOKEN:-}" ]; then
+  ONECLI_SCRIPT="$REPO_ROOT/scripts/onecli-proxy-env.sh"
+  if [ -f "$ONECLI_SCRIPT" ]; then
+    # shellcheck disable=SC1090
+    source "$ONECLI_SCRIPT"
+    echo "[$(ts)] OneCLI proxy active (key injection via gateway)"
+  else
+    echo "[$(ts)] Warning: ONECLI_AGENT_ACCESS_TOKEN set but scripts/onecli-proxy-env.sh not found — running direct" >&2
+  fi
+else
+  echo "[$(ts)] Direct mode (API key from .env)"
+fi
+
 run_step "extract"   npm run --silent extract
 run_step "transform" npm run --silent transform
 run_step "embed"     npm run --silent embed

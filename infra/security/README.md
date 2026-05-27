@@ -63,7 +63,7 @@ See [onecli/onecli README](https://github.com/onecli/onecli) for dev setup and t
 
 | Service | Host | Injection | Used by |
 |---------|------|-----------|---------|
-| Fathom extract | `api.fathom.ai` | Header `X-Api-Key` | `npm run extract` in transcript-vault (optional proxy) |
+| Fathom extract | `api.fathom.ai` | Header `X-Api-Key` — **`valueFormat`: `{value}`** (not `Bearer {value}`) | `npm run extract` in transcript-vault (via OneCLI proxy) |
 | HubSpot MCP | `api.hubapi.com` | Header `Authorization: Bearer …` | HubSpot MCP in `.cursor/mcp.json` |
 | Fireflies | `api.fireflies.ai` | (per their API) | transcript-vault adapter |
 
